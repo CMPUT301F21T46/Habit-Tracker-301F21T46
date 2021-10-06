@@ -1,0 +1,239 @@
+/*
+*Form the initial partial user stories into a backlog of the product's requirements. 
+*For each user story, estimate its size in story points, and denote its risk level (i.e., low, medium, or high). 
+*These requirements will likely evolve and should be maintained up-to-date throughout the project. 
+*Make sure they are numbered for easy reference. 
+*Note which stories will be released for the half-way checkpoint.
+*
+*The story point estimation is done using the fibonacci sequence
+*
+*/
+
+
+//----- Habits -----
+
+US 01.01.01
+As a doer, I want to add a habit, giving it a brief title, reason, and date to start.
+
+	Risk Level: medium to high
+	Story points: 3 to 5
+	Notes:	Will require Firebase setup.
+		Critical for habits section 
+	
+	Completed: False
+
+US 01.02.01
+As a doer, I want a habit to have a plan for what days of the week it should regularly occur.
+
+	Risk Level: medium to high
+	Story points: 3 to 8
+	Notes:	Depends on what the "plan" should look like. 
+		Story US 01.07.01 needs to be able to expand on it
+	
+	Completed: False
+	
+US 01.03.01
+As a doer, I want to view a given habit and its details.
+	
+	Risk Level: low
+	Story points: 1
+	Notes:	Concept covered in Lab
+	
+	Completed: False
+	
+US 01.04.01
+As a doer, I want to edit the details of a habit of mine.
+
+	Risk Level: low
+	Story points: 1
+	Notes:	Concept covered in Lab
+	
+	Completed: False
+	
+US 01.05.01
+As a doer, I want to delete a habit of mine.
+
+	Risk Level: low
+	Story points: 1 to 2
+	Notes:	Concept covered in Lab
+		Little tricky, requires work with Firebase
+	
+	Completed: False
+	
+US 01.06.01
+As a doer, I want a habit title to be up to 20 characters and habit reason to be up to 30 characters.
+
+	Risk Level: low
+	Story points: 1
+	Notes: Trivial
+	
+	Completed: False
+	
+US 01.07.01
+As a doer, I want to see what habits I need to do today.
+
+	Risk Level: low to high
+	Story points: 1 to 8
+	Notes:	Depends on an efficient implmentation of US 01.02.01
+		Might be easy or hard depending on this
+		
+	Completed: False 
+	
+US 01.08.01
+As a doer, I want to see a list of all my habits.
+
+	Risk Level: medium
+	Story points: 2
+	Notes:
+	
+	Completed: False 
+	
+US 01.09.01
+As a doer, I want for each habit on the list, a visual indicator to show how closely I am following its plan over time.
+
+	Risk Level: High
+	Story points: 8 to more?
+	Notes:	Very open-ended statement
+		How complex is this plan?
+	
+	Completed: False
+
+
+//----- Habit Events -----
+
+US 02.01.01
+As a doer, I want to denote a habit event when I have done a habit as planned.
+
+	Risk Level: medium to high
+	Story points: 3 to 5
+	Notes: Critical for Habit events section
+	
+	Completed: False
+	
+US 02.02.01
+As a doer, I want a habit event to have an optional comment of up to 20 characters
+	
+	Risk Level: low
+	Story points: 1
+	Notes:
+	
+	Completed: False
+	
+US 02.03.01
+As a doer, I want a habit event to have an optional photograph to record what happened.
+
+	Risk Level: low
+	Story points: 1
+	Notes:
+	
+	Completed: False
+
+US 02.04.01
+As a doer, I want to view a given habit event and all its available details.
+	Risk Level: low
+	Story points: 1
+	Notes:
+	
+	Completed: False
+
+US 02.05.01
+As a doer, I want to edit the details of a habit event of mine.
+	
+	Risk Level: low
+	Story points: 1
+	Notes:
+	
+	Completed: False
+	
+US 02.06.01
+As a doer, I want to delete a habit event of mine.
+	
+	Risk Level: low
+	Story points: 1
+	Notes:
+	
+	Completed False
+
+
+//----- Profile -----
+
+US 03.01.01
+As a doer, I want to be uniquely identifiable in the system.
+
+	Risk Level: high
+	Story points: 13 to 21
+	Notes:	Can be tricky
+	
+	Completed: False
+	
+	
+//----- Habit Following and Sharing -----	
+
+US 05.01.01
+As a doer, I want to ask another doer to follow all their habits.
+
+	Risk Level: high
+	Story points: 5 to 8 or more 
+	Notes:	Difficulty will be determined by how US 03.01.01 is implemented
+	
+	Completed: False
+	
+US 05.02.01
+As a doer, I want to grant or deny another doer permission to follow all my habits.
+	
+	Risk Level: high
+	Story points: 5 to 8 or more
+	Notes:	Difficulty will be determined by how US 03.01.01 is implemented
+	
+	Completed: False 
+
+US 05.03.01
+As a doer, I want to view the habits and visual indicators of the other doers I am granted to follow.
+	
+	Risk Level: high
+	Story points: 13
+	Notes:	Difficulty will be determined by how US 03.01.01 and US 01.02.01 are implemented
+	
+	Completed: False
+		
+
+//----- Geolocation and Maps -----
+
+US 06.01.01
+As a doer, I want to a habit event to have an optional location to record where it happened.
+
+	Risk Level: low
+	Story points: 1 to 2
+	Notes: Trivial
+	
+	Completed: False
+	
+	
+	
+//----- Total Story Points -----
+	
+	In the worse possible scenario about 100 Story Points
+
+
+//----- Total Completed -----
+	
+	0
+
+
+//----- To be Completed by Halway Checkpoint -----
+	
+	Ideally these stories should be completed by the halway checkpoint
+	We will need more time to dedicate to the other half of stories
+	
+	US 01.01.01 (US 01.03.01, US 01.04.01, US 01.05.01, US 01.06.01 should come along naturally)
+	US 01.02.01
+	US 01.07.01
+	US 01.08.01
+	US 01.09.01
+	US 02.01.01
+	US 06.01.01
+
+
+
+
+
