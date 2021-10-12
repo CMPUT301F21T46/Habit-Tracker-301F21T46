@@ -7,10 +7,12 @@
     "responsibilities": [
       "Knows what days of the week it should occur",
       "Has a title, reason and start date",
-      "Has a visual indicator to show how closely the doer is following its plan over time"
+      "Can get the detail of its habit event ",
+      ""
     ],
     "collaborators": [
       "User",
+      "Habit Tracker",
       "Habit Event"
     ]
   },
@@ -37,6 +39,7 @@
     ],
     "collaborators": [
       "Habit",
+      "Habit Tracker",
       "Habit Event"
     ]
   },
@@ -54,6 +57,23 @@
     "collaborators": [
       "Habit",
       "Doer"
+    ]
+  },
+  {
+    "name": "Habit Tracker",
+    "superclasses": "",
+    "subclasses": "",
+    "type": 3,
+    "responsibilities": [
+      "A list of all habits for doer.",
+      "User can add/delete habits through it",
+      "Can get what habits they need to do today",
+      "Can display the progress of habits",
+      "*Has a visual indicator to show how closely the doer is following its plan over time"
+    ],
+    "collaborators": [
+      "Doer",
+      "Habit"
     ]
   }
 ]
