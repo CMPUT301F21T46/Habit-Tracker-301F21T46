@@ -232,6 +232,8 @@ As a doer, I want to a habit event to have an optional location to record where 
 	US 01.09.01
 	US 02.01.01
 	US 06.01.01
+	US 03.01.01
+	
 
 
 
