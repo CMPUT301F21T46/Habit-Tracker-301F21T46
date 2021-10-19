@@ -7,14 +7,24 @@ import java.util.ArrayList;
 public class HabitData {
     //Holds all the habits for a specific user (each user will have their own habit data)
     //Defines a custom arrayAdapter to be used to display habits
+    //Todo: rename to global data
 
     private static HabitData instance;
     private ArrayList<Habit> habitList;
     private HabitListAdapter habitListAdapter;
 
+    private ArrayList<Habit> singleHabitList;
+    private SingleHabitListAdapter singleHabitListAdapter;
+
+    private int habitIndex;
+
+
     private HabitData(Context activity, int layout){
         habitList = new ArrayList<Habit>();
         habitListAdapter = new HabitListAdapter(activity, R.layout.custom_habit_view_layout, habitList);
+
+        singleHabitList = new ArrayList<Habit>();
+        singleHabitListAdapter = new SingleHabitListAdapter(activity, R.layout.habit_view_layout, habitList);
 
         //Adding test data
         Habit habit1 = new Habit("Walk Dog", "He's fat", "2000-11-11");
@@ -54,6 +64,25 @@ public class HabitData {
     public void setHabitListAdapter(HabitListAdapter habitListAdapter) {
         this.habitListAdapter = habitListAdapter;
     }
+    public ArrayList<Habit> getSingleHabitList() {
+        return singleHabitList;
+    }
+    public void setSingleHabitList(ArrayList<Habit> singleHabitList) {
+        this.singleHabitList = singleHabitList;
+    }
+    public SingleHabitListAdapter getSingleHabitListAdapter() {
+        return singleHabitListAdapter;
+    }
+    public void setSingleHabitListAdapter(SingleHabitListAdapter singleHabitListAdapter) {
+        this.singleHabitListAdapter = singleHabitListAdapter;
+    }
 
+    public int getHabitIndex() {
+        return habitIndex;
+    }
+
+    public void setHabitIndex(int habitIndex) {
+        this.habitIndex = habitIndex;
+    }
 }
 

@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HabitTracker301F21T46">
         <activity
+            android:name=".HabitDetailsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".AllUserHabitsActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
