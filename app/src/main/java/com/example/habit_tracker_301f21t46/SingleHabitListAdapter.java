@@ -1,5 +1,6 @@
 package com.example.habit_tracker_301f21t46;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,8 +13,8 @@ import java.util.ArrayList;
 public class SingleHabitListAdapter extends ArrayAdapter<Habit> {
     //Defines a custom ListAdapter to display the habits
 
-    private Context habitListAdaptercontex;
-    private int habitListAdapterResource;
+    private final Context habitListAdaptercontex;
+    private final int habitListAdapterResource;
 
     public SingleHabitListAdapter(Context context, int resource, ArrayList<Habit> objects) {
         super(context, resource, objects);
@@ -21,6 +22,7 @@ public class SingleHabitListAdapter extends ArrayAdapter<Habit> {
         habitListAdapterResource = resource;
     }
 
+    @SuppressLint("ViewHolder")
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         //get the Habit details

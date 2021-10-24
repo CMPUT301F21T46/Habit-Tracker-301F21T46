@@ -1,36 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
     android:weightSum="120">
 
-
-
-    <CheckBox
-        android:gravity="center"
-        android:textAlignment="center"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:id="@+id/habitCompleted"
-        android:layout_weight="90"/>
-
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="33.3">
+        android:layout_weight="33.3"
+        android:orientation="vertical">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:text="Habit Title"
-            android:textSize="24dp"
-            android:textAlignment="textStart"
             android:id="@+id/single_habit_view"
-            />
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:gravity="center"
+            android:text="Habit Title"
+            android:textAlignment="center"
+            android:textSize="34dp" />
 
     </LinearLayout>
-
 
 </LinearLayout>

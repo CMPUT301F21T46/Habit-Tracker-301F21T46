@@ -16,7 +16,7 @@
         tools:layout_editor_absoluteY="76dp" />
 
     <EditText
-        android:id="@+id/editDose"
+        android:id="@+id/edit_reason_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -33,10 +33,10 @@
         android:text="Reason"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editName" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_name_view" />
 
     <EditText
-        android:id="@+id/editName"
+        android:id="@+id/edit_name_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -52,6 +52,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="#2196F3"
+        android:gravity="center"
         android:text="Habit Details"
         android:textAlignment="center"
         android:textSize="34sp"
@@ -80,9 +81,10 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/datePickerM"
+        android:id="@+id/edit_date_view"
         android:layout_width="282dp"
         android:layout_height="37dp"
+        android:layout_marginTop="28dp"
         android:background="#2196F3"
         android:text="Date Started"
         android:textAlignment="center"
@@ -90,6 +92,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editDose" />
+        app:layout_constraintTop_toBottomOf="@+id/edit_reason_view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

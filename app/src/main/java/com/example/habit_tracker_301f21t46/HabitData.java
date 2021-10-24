@@ -16,8 +16,7 @@ public class HabitData {
     private ArrayList<Habit> singleHabitList;
     private SingleHabitListAdapter singleHabitListAdapter;
 
-    private int habitIndex;
-
+    private int selectedHabitIndex;
 
     private HabitData(Context activity, int layout){
         habitList = new ArrayList<Habit>();
@@ -77,12 +76,12 @@ public class HabitData {
         this.singleHabitListAdapter = singleHabitListAdapter;
     }
 
-    public int getHabitIndex() {
-        return habitIndex;
+    public int getSelectedHabitIndex() {
+        return selectedHabitIndex;
     }
 
-    public void setHabitIndex(int habitIndex) {
-        this.habitIndex = habitIndex;
+    public void setSelectedHabitIndex(int selectedHabitIndex) {
+        this.selectedHabitIndex = selectedHabitIndex;
     }
 }
 

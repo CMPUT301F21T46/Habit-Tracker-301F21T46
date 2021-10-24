@@ -5,8 +5,6 @@
     android:layout_height="match_parent"
     android:weightSum="120">
 
-
-
     <CheckBox
         android:gravity="center"
         android:textAlignment="center"
@@ -27,9 +25,7 @@
             android:text="Habit Title"
             android:textSize="24dp"
             android:textAlignment="textStart"
-            android:gravity="center"
-            android:id="@+id/textView1"
-            />
+            android:id="@+id/textView1" />
 
         <Button
             android:layout_width="match_parent"
@@ -37,6 +33,22 @@
             android:text="Comment on Habit"
             android:textAlignment="textStart"
             android:id="@+id/commentOnHabitButton"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:textAlignment="textStart"
+            android:id="@+id/commentOnHabitEditText"
+            android:maxLength="20"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Confirm"
+            android:textAlignment="textStart"
+            android:id="@+id/confirm_button"
+            android:backgroundTint="@color/black"
             />
 
         <Button
@@ -56,6 +68,5 @@
             />
 
     </LinearLayout>
-
 
 </LinearLayout>

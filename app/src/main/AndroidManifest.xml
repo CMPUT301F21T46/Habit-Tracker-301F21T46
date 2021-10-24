@@ -9,12 +9,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HabitTracker301F21T46">
-        <activity
-            android:name=".HabitDetailsActivity"
-            android:exported="true" />
-        <activity
-            android:name=".AllUserHabitsActivity"
-            android:exported="true" />
+        <activity android:name=".HabitDetailsActivity"
+            android:parentActivityName=".AllUserHabitsActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
+        <activity android:name=".AllUserHabitsActivity"
+            android:parentActivityName=".MainActivity">
+            <!-- The meta-data tag is required if you support API level 15 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity" />
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"

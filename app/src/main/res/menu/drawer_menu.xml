@@ -25,9 +25,9 @@
     <item android:title="More Stuff">
         <menu>
             <item
-                android:id="@+id/nav_placerholder"
+                android:id="@+id/nav_homePage"
                 android:icon="@drawable/ic_message"
-                android:title="PlacerHolder" />
+                android:title="HomePage" />
             <item
                 android:id="@+id/nav_placeholder2"
                 android:icon="@drawable/ic_message"
