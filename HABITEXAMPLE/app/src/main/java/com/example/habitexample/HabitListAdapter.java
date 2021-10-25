@@ -48,14 +48,19 @@ public class HabitListAdapter extends ArrayAdapter<Habit> {
         location.setVisibility(View.GONE);
 
         EditText writtenComment = (EditText) convertView.findViewById(R.id.commentOnHabitEditText);
-        Button confirmButton = (Button) convertView.findViewById(R.id.confirm_button);
+        Button confirmCommentButton = (Button) convertView.findViewById(R.id.confirm_button);
         writtenComment.setVisibility(View.GONE);
-        confirmButton.setVisibility(View.GONE);
+        confirmCommentButton.setVisibility(View.GONE);
+        TextView comment_habit = (TextView) convertView.findViewById(R.id.habit_comment);
+        comment_habit.setVisibility(View.GONE);
 
+        Button confirmPhotoButton = (Button) convertView.findViewById(R.id.confirm_photo_button);
+        confirmPhotoButton.setVisibility(View.GONE);
 
         tvTitle.setText(title);
         CheckBox habitDone = (CheckBox) convertView.findViewById(R.id.habitCompleted);
 
+        View finalConvertView = convertView;
         habitDone.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean isClicked) {
@@ -64,48 +69,62 @@ public class HabitListAdapter extends ArrayAdapter<Habit> {
                     comment.setVisibility(View.VISIBLE);
                     photo.setVisibility(View.VISIBLE);
                     location.setVisibility(View.VISIBLE);
-                    comment.setOnClickListener(new View.OnClickListener() {
 
-                        // need confirm and cancel button
-                        // also need to make sure comment has max limit
-                        @Override
-                        public void onClick(View view) {
-                            writtenComment.setVisibility(View.VISIBLE);
-                            confirmButton.setVisibility(View.VISIBLE);
-
-                            confirmButton.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
-                                    String habitComment = writtenComment.getText().toString();
-                                    writtenComment.setVisibility(View.GONE);
-                                    confirmButton.setVisibility(View.GONE);
-
-
-                                }
-                            });
-
-
-                          /*  datalist.add(cityName);
-                            cityAdapter.notifyDataSetChanged();
-
-                            //hides visibility of confirm button and text box
-                            editText.setVisibility(View.GONE);
-                            confirmButton.setVisibility(View.GONE);
-
-                            editText.getText().clear(); // c*/
-                        }
-                    });
                 } else {
                     comment.setVisibility(View.GONE);
                     photo.setVisibility(View.GONE);
                     location.setVisibility(View.GONE);
                     writtenComment.setVisibility(View.GONE);
-                    confirmButton.setVisibility(View.GONE);
+                    confirmCommentButton.setVisibility(View.GONE);
                     // Will need to delete any info if have added a comment/photo/location
                 }
-            }
-        });
 
+                comment.setOnClickListener(new View.OnClickListener() { // if user wants to add a comment
+
+                    // need confirm and cancel button
+                    // also need to make sure comment has max limit
+                    @Override
+                    public void onClick(View view) {
+                        writtenComment.setVisibility(View.VISIBLE);
+                        confirmCommentButton.setVisibility(View.VISIBLE);
+                    }
+                });
+                confirmCommentButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String habitComment = writtenComment.getText().toString();
+
+                        Habit obj = new Habit(title, reason, startDate, habitComment);
+
+                        comment_habit.setText(habitComment);
+                        HabitData habitData = HabitData.getInstance();
+                        habitData.getHabitList().set(position, obj);
+                        //habitData.getHabitListAdapter().notifyDataSetChanged(); not sure if we need this
+
+                        writtenComment.setVisibility(View.GONE);
+                        writtenComment.getText().clear();
+                        confirmCommentButton.setVisibility(View.GONE);
+                        comment_habit.setVisibility(View.VISIBLE);
+
+                    }
+                });
+
+                photo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        confirmPhotoButton.setVisibility(View.VISIBLE);
+                    }
+                });
+                confirmPhotoButton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // adds photo to array
+                    }
+                });
+
+
+        }
+    });
         return convertView;
-    }
+}
 }

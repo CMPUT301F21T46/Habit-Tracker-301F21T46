@@ -4,17 +4,18 @@ public class Habit {
     private String title;
     private String reason;
     private String startDate;
+    private String commentOnHabit;
     private boolean completed;
     //private String commentOnHabit;
     //TODO Implement plan
     //TODO Implement visual progress indicator
 
 
-    public Habit(String title, String reason, String startDate){
+    public Habit(String title, String reason, String startDate, String commentOnHabit){
         this.title = title;
         this.reason = reason;
         this.startDate = startDate;
-        //this.commentOnHabit = commentOnHabit;
+        this.commentOnHabit = commentOnHabit;
         this.completed = false; //TODO this needs to be reset at the beginning of everyday in the habit plan
     }
 
@@ -37,10 +38,10 @@ public class Habit {
     public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
-    /*public String getCommentOnHabit(){
+    public String getCommentOnHabit(){
         return commentOnHabit;
     }
     public void setCommentOnHabit(String commentOnHabit){
         this.commentOnHabit = commentOnHabit;
-    }*/
+    }
 }
