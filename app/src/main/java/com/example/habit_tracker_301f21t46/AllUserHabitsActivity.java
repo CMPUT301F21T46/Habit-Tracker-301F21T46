@@ -44,7 +44,7 @@ public class AllUserHabitsActivity extends AppCompatActivity implements AddHabit
 
     @Override
     public void onOkPressed(Habit newHabit) {
-
+        // tf is this for
     }
 
 }

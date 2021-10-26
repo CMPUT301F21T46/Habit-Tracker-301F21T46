@@ -6,8 +6,10 @@
         <entry key="app/src/main/res/drawable/ic_list.xml" value="0.31875" />
         <entry key="app/src/main/res/layout/activity_all_user_habits.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_habit_details.xml" value="0.2984375" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.27853260869565216" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="app/src/main/res/layout/activity_main2.xml" value="0.2984375" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.27853260869565216" />
         <entry key="app/src/main/res/layout/activity_test.xml" value="0.25" />
         <entry key="app/src/main/res/layout/add_city_fragment_layout.xml" value="0.33" />
         <entry key="app/src/main/res/layout/add_habit_fragment_layout.xml" value="0.2984375" />

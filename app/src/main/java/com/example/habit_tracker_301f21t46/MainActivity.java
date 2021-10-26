@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.navigation.NavigationView;
+import com.google.firebase.auth.FirebaseAuth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         HabitData initInstance = HabitData.getInstance(this,R.layout.activity_main);
 
         //Setting up toolbar and navigation drawer
+        // Todo: figure out how to make the drawer global (appear on all other activities)
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         drawer = findViewById(R.id.drawer_layout);
@@ -37,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
-        //Start HomePage fragment //Todo fix rotation reset
+        //Start HomePage fragment //Todo fix rotation reset bug
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new HomePageFragment()).commit();
     }
 
@@ -46,13 +48,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         // when an item on the drawer menu is clicked fragment/activity will start
         switch (item.getItemId()) {
-
             case R.id.nav_list:
                 // starts AllUserHabitsActivity
                 Intent intent = new Intent(this, AllUserHabitsActivity.class);
                 startActivity(intent);
                 break;
-
             case R.id.nav_profile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ProfileFragment()).commit();
@@ -64,6 +64,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_homePage:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new HomePageFragment()).commit();
+                break;
+            case R.id.nav_Logout:
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
                 break;
         }
         drawer.closeDrawer(GravityCompat.START); //Close the drawer when an item is selected

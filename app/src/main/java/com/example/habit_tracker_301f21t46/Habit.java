@@ -1,12 +1,14 @@
 package com.example.habit_tracker_301f21t46;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Habit {
     private String title;
     private String reason;
     private String startDate;
     private boolean completed;
+    private String habitID;
     //TODO Implement plan
     //TODO Implement visual progress indicator
 
@@ -15,6 +17,7 @@ public class Habit {
         this.title = title;
         this.reason = reason;
         this.startDate = startDate;
+        habitID = UUID.randomUUID().toString();
         this.completed = false; //TODO this needs to be reset at the beginning of everyday in the habit plan
     }
 
@@ -36,5 +39,13 @@ public class Habit {
     }
     public void setStartDate(String startDate) {
         this.startDate = startDate;
+    }
+
+    public String getHabitID() {
+        return habitID;
+    }
+
+    public void setHabitID(String habitID) {
+        this.habitID = habitID;
     }
 }

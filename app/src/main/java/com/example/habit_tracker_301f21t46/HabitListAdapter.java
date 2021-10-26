@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 public class HabitListAdapter extends ArrayAdapter<Habit> {
     //Defines a custom ListAdapter to display the habits
+    // Todo: This should only be concerned with displaying data move habit event stuff somewhere else
 
     private Context habitListAdaptercontex;
     private int habitListAdapterResource;

@@ -1,11 +1,14 @@
 package com.example.habit_tracker_301f21t46;
 
+import static android.content.ContentValues.TAG;
+
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.DatePicker;
@@ -14,21 +17,29 @@ import android.widget.TextView;
 
 import androidx.fragment.app.DialogFragment;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class AddHabitFragment extends DialogFragment {
+    // FireBase
+    private FirebaseAuth mAuth;
+    private FirebaseFirestore mStore;
+    String userID;
+    // UI
     private EditText title;
     private EditText reason;
     private EditText date;
-
     private TextView displayDateView;
     private String strDate;
-
     private DatePickerDialog.OnDateSetListener dateSetListener;
 
-
-    private OnFragmentInteractionListener listener;
-
+    private OnFragmentInteractionListener listener; // ?? tf is this for
     public interface OnFragmentInteractionListener{
         void onOkPressed(Habit newHabit);
     }
@@ -45,36 +56,6 @@ public class AddHabitFragment extends DialogFragment {
 
     public Dialog onCreateDialog(Bundle savedInstanceState){
         View view = LayoutInflater.from(getActivity()).inflate(R.layout.add_habit_fragment_layout,null);
-
-        /*
-        displayDateView.setOnClickListener(new View.OnClickListener() {
-            //Create date picker
-            @Override
-            public void onClick(View view) {
-                Calendar cal = Calendar.getInstance();
-                int year = cal.get(Calendar.YEAR);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
-
-                DatePickerDialog dialog = new DatePickerDialog(
-                        getContext(),
-                        android.R.style.Theme_Holo_Dialog_MinWidth,
-                        dateSetListener,
-                        year, month, day);
-                dialog.show();
-            }
-        });
-        dateSetListener = new DatePickerDialog.OnDateSetListener() {
-            //Set date from user input on date picker
-            @Override
-            public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-                month = month + 1;
-                strDate = year + "-" + month + "-" + day;
-            }
-        };
-
-         */
-
         title = view.findViewById(R.id.title_editText);
         reason = view.findViewById(R.id.reason_editText);
         //Todo implement DatePicker
@@ -98,10 +79,23 @@ public class AddHabitFragment extends DialogFragment {
                         habitData.getHabitList().add(newHabit);
                         habitData.getSingleHabitListAdapter().notifyDataSetChanged();
 
+                        //Add Habit to FireBase
+                        mAuth = FirebaseAuth.getInstance();
+                        mStore = FirebaseFirestore.getInstance();
+                        userID = mAuth.getCurrentUser().getUid(); // retrieve ID of current logged in user
+                        DocumentReference documentReference = mStore.collection("habits").document(newHabit.getHabitID());
+                        Map<String, Object> habit = new HashMap<>();
+                        habit.put("habitTitle", newHabit.getTitle());
+                        habit.put("habitReason", newHabit.getReason());
+                        habit.put("startDate", newHabit.getStartDate());
+                        habit.put("owner", userID);
+                        documentReference.set(habit).addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Log.d(TAG, "Habit has been added");
+                            }
+                        });
                     }
                 }).create();
-
-
     }
-
 }
