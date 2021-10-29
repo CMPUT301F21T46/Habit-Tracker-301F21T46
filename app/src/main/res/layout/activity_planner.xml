@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_planner"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:backgroundTint="#DCDCDC"
+    tools:context=".Planner">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="0dp"
+        android:background="#03A9F4"
+        android:backgroundTint="@color/purple_500"
+        android:text="Planner"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/Mon"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="0dp"
+        android:background="@color/purple_500"
+        android:text="monday"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        tools:ignore="UnknownId" />
+
+    <ListView
+        android:id="@+id/Mon_list"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/Mon"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="-1dp"
+        android:backgroundTint="#D93737" />
+
+    <TextView
+        android:id="@+id/Tue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/Mon_list"
+        android:layout_marginTop="0dp"
+        android:background="@color/purple_500"
+        android:text="Tuesday"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        tools:ignore="UnknownId" />
+
+    <ListView
+        android:id="@+id/Tue_list"
+        android:layout_width="match_parent"
+
+        android:layout_height="80dp"
+        android:layout_below="@+id/Tue"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="-1dp"
+        android:backgroundTint="#D93737" />
+
+    <TextView
+        android:id="@+id/Wed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/Tue_list"
+        android:layout_marginTop="0dp"
+        android:background="@color/purple_500"
+        android:text="Wednesday"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        tools:ignore="UnknownId" />
+
+    <ListView
+        android:id="@+id/Wed_list"
+        android:layout_below="@+id/Wed"
+
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="-1dp"
+        android:backgroundTint="#D93737" />
+
+    <TextView
+        android:id="@+id/Thur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/Wed_list"
+        android:layout_marginTop="0dp"
+        android:background="@color/purple_500"
+        android:text="Thursday"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        tools:ignore="UnknownId" />
+
+    <ListView
+        android:id="@+id/Thur_list"
+        android:layout_below="@+id/Thur"
+
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="-1dp"
+        android:backgroundTint="#D93737" />
+
+    <TextView
+        android:id="@+id/Fri"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/Thur_list"
+        android:layout_marginTop="0dp"
+        android:background="@color/purple_500"
+        android:text="Friday"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        tools:ignore="UnknownId" />
+
+    <ListView
+        android:id="@+id/Fri_list"
+        android:layout_below="@+id/Fri"
+
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="-1dp"
+        android:backgroundTint="#D93737" />
+
+    <TextView
+        android:id="@+id/Sat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/Fri_list"
+        android:layout_marginTop="0dp"
+        android:background="@color/purple_500"
+        android:text="Saturday"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        tools:ignore="UnknownId" />
+
+    <ListView
+        android:id="@+id/Sat_list"
+        android:layout_width="match_parent"
+
+        android:layout_height="80dp"
+        android:layout_below="@+id/Sat"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="-1dp"
+        android:backgroundTint="#D93737" />
+
+    <TextView
+        android:id="@+id/Sun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/Sat_list"
+        android:layout_marginTop="0dp"
+        android:background="@color/purple_500"
+        android:text="Sunday"
+        android:textColor="#FFFFFF"
+        android:textSize="16sp"
+        tools:ignore="UnknownId" />
+
+    <ListView
+        android:id="@+id/Sun_list"
+        android:layout_below="@+id/Sun"
+
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="-1dp"
+        android:backgroundTint="#D93737" />
+
+
+
+
+</RelativeLayout>

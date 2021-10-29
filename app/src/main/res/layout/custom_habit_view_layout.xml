@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="120">
+
+    <CheckBox
+        android:gravity="center"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:id="@+id/habitCompleted"
+        android:layout_weight="90"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="33.3">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Habit Title"
+            android:textSize="24dp"
+            android:textAlignment="textStart"
+            android:id="@+id/textView1" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Comment on Habit"
+            android:textAlignment="textStart"
+            android:id="@+id/commentOnHabitButton"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:textAlignment="textStart"
+            android:id="@+id/commentOnHabitEditText"
+            android:maxLength="20"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Confirm"
+            android:textAlignment="textStart"
+            android:id="@+id/confirm_button"
+            android:backgroundTint="@color/black"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Add Photo"
+            android:textAlignment="textStart"
+            android:id="@+id/addPhotoHabitButton"
+            />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:text="Add location"
+            android:textAlignment="textStart"
+            android:id="@+id/addLocationHabitButton"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>
