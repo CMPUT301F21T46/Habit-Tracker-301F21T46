@@ -28,6 +28,8 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class HabitDetailsActivity extends AppCompatActivity{
     // FireBase
@@ -62,18 +64,46 @@ public class HabitDetailsActivity extends AppCompatActivity{
         editReasonView = findViewById(R.id.edit_reason_view);
 
         //Testing fetching Data from FireBase
-        DocumentReference documentReference = mStore.collection("habits").document(
-                "2efb9b77-e09c-45d7-a403-10d97b0cc452");//Todo: make it global selectedHabit.getHabitID());
+        DocumentReference documentReference = mStore.collection(mAuth.getCurrentUser().getEmail()).document(
+                habitData.getHabitList().get(habitData.getSelectedHabitIndex()).getHabitID());
         documentReference.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                editTitleView.setText(value.getString("habitTitle"));
-                editReasonView.setText(value.getString("habitReason"));
-                displayDateView.setText(value.getString("startDate"));
+            public void onEvent(@Nullable DocumentSnapshot doc, @Nullable FirebaseFirestoreException error) {
+                // Todo: this can be improved
+                editTitleView.setText(doc.getString("habitTitle"));
+                editReasonView.setText(doc.getString("habitReason"));
+                displayDateView.setText(doc.getString("startDate"));
             }
         });
 
-        //Date Picker Stuff
+        DatePicker();
+
+        confirmChangesButton.setOnClickListener(new View.OnClickListener() {
+            //Get the user input, check validity, set changes and end activity
+            @Override
+            public void onClick(View view) {
+                Map<String, Object> habit = new HashMap<>();
+                habit.put("habitID", habitData.getHabitList().get(habitData.getSelectedHabitIndex()).getHabitID());
+                habit.put("habitTitle", editTitleView.getText().toString());
+                habit.put("habitReason", editReasonView.getText().toString());
+                habit.put("startDate", date);
+                documentReference.set(habit);
+
+                endActivity();
+            }
+        });
+
+        deleteMedButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Todo: Deleting is really buggy
+                documentReference.delete();
+                endActivity();
+            }
+        });
+    }
+
+    private void DatePicker() {
         date = selectedHabit.getStartDate();
         displayDateView.setOnClickListener(new View.OnClickListener() {
             //Create date picker
@@ -100,55 +130,6 @@ public class HabitDetailsActivity extends AppCompatActivity{
                 date = year + "-" + month + "-" + day;
             }
         };
-
-        //Todo: new details need to be store in FireStore
-        confirmChangesButton.setOnClickListener(new View.OnClickListener() {
-            //Get the user input, check validity, set changes and end activity
-            @Override
-            public void onClick(View view) {
-                getInput();
-                //if(checkInput()) {
-                //Todo: Implement input checks if needed
-                    setChanges();
-                    Toast.makeText(getApplicationContext(),
-                            "Changes confirmed",
-                            Toast.LENGTH_LONG).show();
-                    endActivity();
-                //}
-            }
-        });
-
-        //Todo: habit needs to deleted off FireBase
-        deleteMedButton.setOnClickListener(new View.OnClickListener() {
-            //Delete med and end activity
-            @Override
-            public void onClick(View view) {
-                deleteMed();
-                endActivity();
-            }
-        });
-    }
-
-    private void getInput(){
-        //Get user input from views
-        title = editTitleView.getText().toString();
-        reason = editReasonView.getText().toString();
-    }
-
-    private void setChanges(){
-        //Todo: Removed this once FireStore is global?
-        //Set user input on chosen Medicine object
-        selectedHabit.setTitle(title);
-        selectedHabit.setReason(reason);
-        selectedHabit.setStartDate(date);
-        habitData.getSingleHabitListAdapter().notifyDataSetChanged();
-    }
-
-    private void deleteMed() {
-        //Todo: Removed this once FireStore is global?
-        //Delete Chosen Medicine object
-        habitData.getHabitList().remove(selectedHabit);
-        habitData.getSingleHabitListAdapter().notifyDataSetChanged();
     }
 
     private void endActivity() {

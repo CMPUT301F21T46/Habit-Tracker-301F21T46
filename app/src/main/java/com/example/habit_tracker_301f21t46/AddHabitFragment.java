@@ -25,12 +25,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.UUID;
 
 public class AddHabitFragment extends DialogFragment {
     // FireBase
     private FirebaseAuth mAuth;
     private FirebaseFirestore mStore;
-    String userID;
+    String userEmail;
     // UI
     private EditText title;
     private EditText reason;
@@ -73,28 +74,19 @@ public class AddHabitFragment extends DialogFragment {
                         String newTitle = title.getText().toString();
                         String newReason = reason.getText().toString();
                         String newDate = date.getText().toString();
-                        Habit newHabit = new Habit(newTitle, newReason, newDate);
-
-                        HabitData habitData = HabitData.getInstance();
-                        habitData.getHabitList().add(newHabit);
-                        habitData.getSingleHabitListAdapter().notifyDataSetChanged();
+                        String uniqueID = UUID.randomUUID().toString();
 
                         //Add Habit to FireBase
                         mAuth = FirebaseAuth.getInstance();
                         mStore = FirebaseFirestore.getInstance();
-                        userID = mAuth.getCurrentUser().getUid(); // retrieve ID of current logged in user
-                        DocumentReference documentReference = mStore.collection("habits").document(newHabit.getHabitID());
+                        userEmail = mAuth.getCurrentUser().getEmail();
+                        DocumentReference documentReference = mStore.collection(userEmail).document(uniqueID);
                         Map<String, Object> habit = new HashMap<>();
-                        habit.put("habitTitle", newHabit.getTitle());
-                        habit.put("habitReason", newHabit.getReason());
-                        habit.put("startDate", newHabit.getStartDate());
-                        habit.put("owner", userID);
-                        documentReference.set(habit).addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void unused) {
-                                Log.d(TAG, "Habit has been added");
-                            }
-                        });
+                        habit.put("habitTitle", newTitle);
+                        habit.put("habitReason", newReason);
+                        habit.put("startDate", newDate);
+                        habit.put("habitID", uniqueID);
+                        documentReference.set(habit);
                     }
                 }).create();
     }

@@ -13,11 +13,11 @@ public class Habit {
     //TODO Implement visual progress indicator
 
 
-    public Habit(String title, String reason, String startDate){
+    public Habit(String title, String reason, String startDate, String habitID){
         this.title = title;
         this.reason = reason;
         this.startDate = startDate;
-        habitID = UUID.randomUUID().toString();
+        this.habitID = habitID;
         this.completed = false; //TODO this needs to be reset at the beginning of everyday in the habit plan
     }
 
