@@ -1,6 +1,7 @@
 package com.example.habit_tracker_301f21t46;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class Habit {
@@ -9,9 +10,6 @@ public class Habit {
     private String startDate;
     private boolean completed;
     private String habitID;
-    //TODO Implement plan
-    //TODO Implement visual progress indicator
-
 
     public Habit(String title, String reason, String startDate, String habitID){
         this.title = title;
