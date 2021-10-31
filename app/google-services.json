@@ -36,6 +36,35 @@
     },
     {
       "client_info": {
+        "mobilesdk_app_id": "1:781087366609:android:b0904918e4801ccfb194f0",
+        "android_client_info": {
+          "package_name": "com.example.habit_tracker_301f21t46_zk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "781087366609-024qk5me5v08cu8kr75nplcrtkmgdo0l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB9N7SBFEtUqFZBP6yIEh_ECNZas0vW0hg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "781087366609-024qk5me5v08cu8kr75nplcrtkmgdo0l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:781087366609:android:3b0b972515ec0d0ab194f0",
         "android_client_info": {
           "package_name": "com.example.habittracker"
