@@ -4,4 +4,14 @@
     android:layout_height="match_parent"
     android:background="@android:color/holo_green_dark">
 
+    <Button
+        android:id="@+id/samefrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="343dp"
+        android:text="Button" />
 </RelativeLayout>
