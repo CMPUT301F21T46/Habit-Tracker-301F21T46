@@ -49,9 +49,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         // when an item on the drawer menu is clicked fragment/activity will start
         switch (item.getItemId()) {
             case R.id.nav_list:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new AllHabitsFragment()).commit();
                 // starts AllUserHabitsActivity
-                Intent intent = new Intent(this, AllUserHabitsActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(this, AllUserHabitsActivity.class);
+                //startActivity(intent);
                 break;
             case R.id.nav_profile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,

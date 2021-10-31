@@ -1,25 +1,19 @@
 package com.example.habit_tracker_301f21t46;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
-
 import android.app.DatePickerDialog;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.google.android.material.navigation.NavigationView;
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -31,7 +25,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-public class HabitDetailsActivity extends AppCompatActivity{
+public class HabitDetailsFragment extends Fragment {
     // FireBase
     private FirebaseAuth mAuth;
     private FirebaseFirestore mStore;
@@ -46,10 +40,10 @@ public class HabitDetailsActivity extends AppCompatActivity{
     private HabitData habitData = HabitData.getInstance();
     private Habit selectedHabit = habitData.getHabitList().get(habitData.getSelectedHabitIndex());
 
+    @Nullable
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_habit_details);
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_habit_details,container,false);
 
         // Getting FireBase Instances
         mAuth = FirebaseAuth.getInstance();
@@ -57,11 +51,13 @@ public class HabitDetailsActivity extends AppCompatActivity{
         userID = mAuth.getCurrentUser().getUid(); // retrieve ID of current logged in user
 
         //Find views
-        confirmChangesButton = findViewById(R.id.confirmChangesButton);
-        deleteMedButton = findViewById(R.id.deleteMedButton);
-        displayDateView = (TextView) findViewById(R.id.edit_date_view);
-        editTitleView = findViewById(R.id.edit_name_view);
-        editReasonView = findViewById(R.id.edit_reason_view);
+        confirmChangesButton = view.findViewById(R.id.confirmChangesButton);
+        deleteMedButton = view.findViewById(R.id.deleteMedButton);
+        displayDateView = (TextView) view.findViewById(R.id.edit_date_view);
+        editTitleView = view.findViewById(R.id.edit_name_view);
+        editReasonView = view.findViewById(R.id.edit_reason_view);
+
+        DatePicker();
 
         //Testing fetching Data from FireBase
         DocumentReference documentReference = mStore.collection(mAuth.getCurrentUser().getEmail()).document(
@@ -76,8 +72,6 @@ public class HabitDetailsActivity extends AppCompatActivity{
             }
         });
 
-        DatePicker();
-
         confirmChangesButton.setOnClickListener(new View.OnClickListener() {
             //Get the user input, check validity, set changes and end activity
             @Override
@@ -89,7 +83,11 @@ public class HabitDetailsActivity extends AppCompatActivity{
                 habit.put("startDate", date);
                 documentReference.set(habit);
 
-                endActivity();
+                AllHabitsFragment nextFrag = new AllHabitsFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, nextFrag, "findThisFragment")
+                        .addToBackStack(null)
+                        .commit();
             }
         });
 
@@ -98,9 +96,16 @@ public class HabitDetailsActivity extends AppCompatActivity{
             public void onClick(View view) {
                 // Todo: Deleting is really buggy
                 documentReference.delete();
-                endActivity();
+
+                AllHabitsFragment nextFrag = new AllHabitsFragment();
+                getActivity().getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, nextFrag, "findThisFragment")
+                        .addToBackStack(null)
+                        .commit();
             }
         });
+
+        return view;
     }
 
     private void DatePicker() {
@@ -115,7 +120,7 @@ public class HabitDetailsActivity extends AppCompatActivity{
                 int day = cal.get(Calendar.DAY_OF_MONTH);
 
                 DatePickerDialog dialog = new DatePickerDialog(
-                        HabitDetailsActivity.this,
+                        getActivity(),
                         android.R.style.Theme_Holo_Dialog_MinWidth,
                         dateSetListener,
                         year, month, day);
@@ -130,11 +135,5 @@ public class HabitDetailsActivity extends AppCompatActivity{
                 date = year + "-" + month + "-" + day;
             }
         };
-    }
-
-    private void endActivity() {
-        //Goes back to MainActivity
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
     }
 }
