@@ -23,13 +23,6 @@ public class HomePageFragment extends Fragment {
         listView = view.findViewById(R.id.listView);
         listView.setAdapter(HabitData.getInstance().getHabitListAdapter());
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(getActivity(), HabitDetailsActivity.class);
-                startActivity(intent);
-            }
-        });
         return view;
     }
 }

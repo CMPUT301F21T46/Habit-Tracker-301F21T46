@@ -14,8 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class AllHabitsFragment extends Fragment implements AddHabitFragment.OnFragmentInteractionListener{
-
+public class AllHabitsFragment extends Fragment {
 
     @Nullable
     @Override
@@ -51,10 +50,5 @@ public class AllHabitsFragment extends Fragment implements AddHabitFragment.OnFr
         });
 
         return view;
-    }
-
-    @Override
-   public void onOkPressed(Habit newHabit) {
-
     }
 }
