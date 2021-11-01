@@ -10,6 +10,7 @@ public class Habit {
     private String startDate;
     private boolean completed;
     private String habitID;
+    private HabitEvent habitEvent;
 
     public Habit(String title, String reason, String startDate, String habitID){
         this.title = title;
@@ -17,6 +18,7 @@ public class Habit {
         this.startDate = startDate;
         this.habitID = habitID;
         this.completed = false; //TODO this needs to be reset at the beginning of everyday in the habit plan
+        this.habitEvent = new HabitEvent();
     }
 
     //----- Getters and Setters -----
@@ -38,12 +40,7 @@ public class Habit {
     public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
-
-    public String getHabitID() {
-        return habitID;
-    }
-
-    public void setHabitID(String habitID) {
-        this.habitID = habitID;
-    }
+    public String getHabitID() { return habitID; }
+    public void setHabitID(String habitID) { this.habitID = habitID; }
+    public HabitEvent getHabitEvent() { return habitEvent; }
 }
