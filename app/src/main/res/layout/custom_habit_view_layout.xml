@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="120">
 
     <CheckBox
-        android:gravity="center"
-        android:textAlignment="center"
+        android:id="@+id/habitCompleted"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:id="@+id/habitCompleted"
-        android:layout_weight="90"/>
+        android:layout_margin="@dimen/fab_margin"
+        android:layout_weight="95"
+        android:gravity="center_horizontal"
+        android:textAlignment="center" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -27,13 +30,20 @@
             android:textAlignment="textStart"
             android:id="@+id/textView1" />
 
+        <TextView
+            android:id="@+id/habitEventComment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="comment"
+            android:textAlignment="textStart"
+            android:textSize="16sp" />
+
         <Button
+            android:id="@+id/commentOnHabitButton"
             android:layout_width="match_parent"
             android:layout_height="45dp"
-            android:text="Comment on Habit"
-            android:textAlignment="textStart"
-            android:id="@+id/commentOnHabitButton"
-            />
+            android:text="Add Comment"
+            android:textAlignment="textStart" />
 
         <EditText
             android:layout_width="match_parent"
@@ -42,14 +52,32 @@
             android:id="@+id/commentOnHabitEditText"
             android:maxLength="20"
             />
-        <Button
+
+        <LinearLayout
+            android:id="@+id/confirmCommentButtons"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Confirm"
-            android:textAlignment="textStart"
-            android:id="@+id/confirm_button"
-            android:backgroundTint="@color/black"
-            />
+            android:layout_height="63dp"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <Button
+                android:id="@+id/cancelCommentButton"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_weight="50"
+                android:backgroundTint="@color/black"
+                android:text="Cancel"
+                android:textAlignment="textStart" />
+
+            <Button
+                android:id="@+id/confirmCommentButton"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:layout_weight="50"
+                android:backgroundTint="@color/black"
+                android:text="Confirm"
+                android:textAlignment="textStart" />
+        </LinearLayout>
 
         <Button
             android:layout_width="match_parent"
@@ -58,6 +86,20 @@
             android:textAlignment="textStart"
             android:id="@+id/addPhotoHabitButton"
             />
+
+        <ImageView
+            android:id="@+id/habitPhoto"
+            android:layout_width="match_parent"
+            android:layout_height="259dp"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/habitEventLocation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="location"
+            android:textAlignment="textStart"
+            android:textSize="16sp" />
 
         <Button
             android:layout_width="match_parent"

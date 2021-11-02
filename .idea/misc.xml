@@ -3,6 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/School/2021-22/CMPUT301/Proj/Habit-Tracker-301F21T46/app/src/main/res/drawable/ic_followers.xml" value="0.22135416666666666" />
+        <entry key="..\:/School/2021-22/CMPUT301/Proj/Habit-Tracker-301F21T46/app/src/main/res/drawable/ic_list.xml" value="0.22135416666666666" />
+        <entry key="..\:/School/2021-22/CMPUT301/Proj/Habit-Tracker-301F21T46/app/src/main/res/layout/activity_login.xml" value="0.20520833333333333" />
+        <entry key="..\:/School/2021-22/CMPUT301/Proj/Habit-Tracker-301F21T46/app/src/main/res/layout/custom_habit_view_layout.xml" value="0.20520833333333333" />
+        <entry key="..\:/School/2021-22/CMPUT301/Proj/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_all_habits.xml" value="0.20520833333333333" />
+        <entry key="..\:/School/2021-22/CMPUT301/Proj/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_profile.xml" value="0.20520833333333333" />
         <entry key="app/src/main/res/drawable/ic_list.xml" value="0.31875" />
         <entry key="app/src/main/res/layout/activity_all_user_habits.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_habit_details.xml" value="0.2984375" />

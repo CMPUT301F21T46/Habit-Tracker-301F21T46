@@ -1,68 +1,108 @@
 package com.example.habit_tracker_301f21t46;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class HabitEvent {
 
     private String comment;
-    private ImageView photograph;
     private String location;
 
     public HabitEvent() {
-        this.comment = "";
-        this.location = "";
+
     }
 
     public void Initialize(View habitView) {
         CheckBox habitDone = (CheckBox) habitView.findViewById(R.id.habitCompleted);
-        Button photo = (Button) habitView.findViewById(R.id.addPhotoHabitButton);
-        Button location = (Button) habitView.findViewById(R.id.addLocationHabitButton);
-        Button comment = (Button) habitView.findViewById(R.id.commentOnHabitButton);
-        EditText writtenComment = (EditText) habitView.findViewById(R.id.commentOnHabitEditText);
-        Button confirmButton = (Button) habitView.findViewById(R.id.confirm_button);
 
-        habitDone.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean isClicked) {
-                if (isClicked == true) {
-                    //habitDone.setChecked(true);
-                    comment.setVisibility(View.VISIBLE);
-                    photo.setVisibility(View.VISIBLE);
-                    location.setVisibility(View.VISIBLE);
-                    comment.setOnClickListener(new View.OnClickListener() {
-
-                        // need confirm and cancel button
-                        // also need to make sure comment has max limit
-                        @Override
-                        public void onClick(View view) {
-                            writtenComment.setVisibility(View.VISIBLE);
-                            confirmButton.setVisibility(View.VISIBLE);
-
-                            confirmButton.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View view) {
-                                    String habitComment = writtenComment.getText().toString();
-                                    writtenComment.setVisibility(View.GONE);
-                                    confirmButton.setVisibility(View.GONE);
-                                }
-                            });
-                        }
-                    });
-                } else {
-                    comment.setVisibility(View.GONE);
-                    photo.setVisibility(View.GONE);
-                    location.setVisibility(View.GONE);
-                    writtenComment.setVisibility(View.GONE);
-                    confirmButton.setVisibility(View.GONE);
-                    // Will need to delete any info if have added a comment/photo/location
-                }
-            }
+        habitDone.setOnCheckedChangeListener((CompoundButton compoundButton, boolean isClicked) -> {
+            onChecked(habitView, isClicked);
         });
 
+    }
+
+    private void onChecked(View habitView, boolean isClicked) {
+        Button addPhoto = (Button) habitView.findViewById(R.id.addPhotoHabitButton);
+        Button addLocation = (Button) habitView.findViewById(R.id.addLocationHabitButton);
+        Button addComment = (Button) habitView.findViewById(R.id.commentOnHabitButton);
+        if (isClicked) {
+            addComment.setVisibility(View.VISIBLE);
+            addPhoto.setVisibility(View.VISIBLE);
+            addLocation.setVisibility(View.VISIBLE);
+
+            addComment.setOnClickListener((View view) -> {
+                addComment(habitView);
+            });
+        } else {
+            // Will need to delete any info if have added a comment/photo/location
+            comment = "";
+
+            cancelComment(habitView);
+            addComment.setVisibility(View.GONE);
+            addPhoto.setVisibility(View.GONE);
+            addLocation.setVisibility(View.GONE);
+        }
+    }
+
+    private void addComment(View habitView) {
+        Button addComment = (Button) habitView.findViewById(R.id.commentOnHabitButton);
+        TextView habitEventComment = (TextView) habitView.findViewById(R.id.habitEventComment);
+
+        EditText writtenComment = (EditText) habitView.findViewById(R.id.commentOnHabitEditText);
+        Button confirmButton = (Button) habitView.findViewById(R.id.confirmCommentButton);
+        Button cancelButton = (Button) habitView.findViewById(R.id.cancelCommentButton);
+        LinearLayout confirmButtons = (LinearLayout) habitView.findViewById(R.id.confirmCommentButtons);
+
+        writtenComment.setText(comment);
+        addComment.setVisibility(View.GONE);
+        habitEventComment.setVisibility(View.GONE);
+        writtenComment.setVisibility(View.VISIBLE);
+        confirmButtons.setVisibility(View.VISIBLE);
+        confirmButton.setVisibility(View.VISIBLE);
+        cancelButton.setVisibility(View.VISIBLE);
+
+        confirmButton.setOnClickListener((View view) -> {
+            confirmComment(habitView);
+        });
+
+        cancelButton.setOnClickListener((View view)  -> {
+            cancelComment(habitView);
+        });
+    }
+
+    private void cancelComment(View habitView) {
+        Button addComment = (Button) habitView.findViewById(R.id.commentOnHabitButton);
+        TextView habitEventComment = (TextView) habitView.findViewById(R.id.habitEventComment);
+        EditText writtenComment = (EditText) habitView.findViewById(R.id.commentOnHabitEditText);
+        Button confirmButton = (Button) habitView.findViewById(R.id.confirmCommentButton);
+        Button cancelButton = (Button) habitView.findViewById(R.id.cancelCommentButton);
+        LinearLayout confirmButtons = (LinearLayout) habitView.findViewById(R.id.confirmCommentButtons);
+
+        boolean commentEmpty = comment.equals("");
+        habitEventComment.setVisibility(commentEmpty ? View.GONE : View.VISIBLE);
+        addComment.setText(commentEmpty ? "ADD COMMENT" : "EDIT COMMENT");
+        addComment.setVisibility(View.VISIBLE);
+        writtenComment.setVisibility(View.GONE);
+        confirmButtons.setVisibility(View.GONE);
+        confirmButton.setVisibility(View.GONE);
+        cancelButton.setVisibility(View.GONE);
+    }
+
+    private void confirmComment(View habitView) {
+        Button addComment = (Button) habitView.findViewById(R.id.commentOnHabitButton);
+        TextView habitEventComment = (TextView) habitView.findViewById(R.id.habitEventComment);
+        EditText writtenComment = (EditText) habitView.findViewById(R.id.commentOnHabitEditText);
+
+        comment = writtenComment.getText().toString();
+
+        habitEventComment.setText(comment);
+        cancelComment(habitView);
     }
 }
