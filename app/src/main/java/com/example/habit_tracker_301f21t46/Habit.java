@@ -43,4 +43,16 @@ public class Habit {
     public String getHabitID() { return habitID; }
     public void setHabitID(String habitID) { this.habitID = habitID; }
     public HabitEvent getHabitEvent() { return habitEvent; }
+
+    @Override
+    public boolean equals(Object obj){
+        if (obj == null)
+            return false;
+        if (obj == this)
+            return true;
+        if (((Habit)obj).title == this.title && ((Habit)obj).reason == this.reason && ((Habit)obj).startDate == this.startDate && ((Habit)obj).habitID == this.habitID){
+            return true;
+        }
+        return false;
+    }
 }
