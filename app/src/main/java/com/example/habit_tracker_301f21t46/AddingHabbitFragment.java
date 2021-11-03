@@ -76,7 +76,7 @@ public class AddingHabbitFragment extends Fragment {
             public void onClick(View v) {
                 if(!days_of_week.contains("tuesday")) {
                     days_of_week.add("tuesday");
-                    mon_btn.setBackgroundColor(Color.rgb(75, 0, 130));
+                    tue_btn.setBackgroundColor(Color.rgb(75, 0, 130));
                 }
             }
         });
@@ -85,7 +85,7 @@ public class AddingHabbitFragment extends Fragment {
             public void onClick(View v) {
                 if(!days_of_week.contains("wednesday")) {
                     days_of_week.add("wednesday");
-                    mon_btn.setBackgroundColor(Color.rgb(75, 0, 130));
+                    wed_btn.setBackgroundColor(Color.rgb(75, 0, 130));
                 }
             }
         });
@@ -94,7 +94,7 @@ public class AddingHabbitFragment extends Fragment {
             public void onClick(View v) {
                 if(!days_of_week.contains("thursday")) {
                     days_of_week.add("thursday");
-                    mon_btn.setBackgroundColor(Color.rgb(75, 0, 130));
+                    thu_btn.setBackgroundColor(Color.rgb(75, 0, 130));
                 }
             }
         });
@@ -105,7 +105,7 @@ public class AddingHabbitFragment extends Fragment {
                 mon_btn.setBackgroundColor(Color.rgb(75,0,130));
                 if(!days_of_week.contains("friday")) {
                     days_of_week.add("friday");
-                    mon_btn.setBackgroundColor(Color.rgb(75, 0, 130));
+                    fri_btn.setBackgroundColor(Color.rgb(75, 0, 130));
                 }
             }
         });
@@ -114,7 +114,7 @@ public class AddingHabbitFragment extends Fragment {
             public void onClick(View v) {
                 if(!days_of_week.contains("saturday")) {
                     days_of_week.add("saturday");
-                    mon_btn.setBackgroundColor(Color.rgb(75, 0, 130));
+                    sat_btn.setBackgroundColor(Color.rgb(75, 0, 130));
                 }
             }
         });
@@ -123,7 +123,7 @@ public class AddingHabbitFragment extends Fragment {
             public void onClick(View v) {
                 if(!days_of_week.contains("sunday")) {
                     days_of_week.add("sunday");
-                    mon_btn.setBackgroundColor(Color.rgb(75, 0, 130));
+                    sun_btn.setBackgroundColor(Color.rgb(75, 0, 130));
                 }
             }
         });
