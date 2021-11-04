@@ -101,8 +101,6 @@ public class AddingHabbitFragment extends Fragment {
         fri_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                days_of_week.add("friday");
-                mon_btn.setBackgroundColor(Color.rgb(75,0,130));
                 if(!days_of_week.contains("friday")) {
                     days_of_week.add("friday");
                     fri_btn.setBackgroundColor(Color.rgb(75, 0, 130));
