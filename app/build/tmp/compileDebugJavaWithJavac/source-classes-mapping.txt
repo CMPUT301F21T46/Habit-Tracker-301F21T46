@@ -1,0 +1,77 @@
+com/example/habit_tracker_301f21t46/databinding/ActivityLoginBinding.java
+ com.example.habit_tracker_301f21t46.databinding.ActivityLoginBinding
+com/example/habit_tracker_301f21t46/databinding/FragmentHomepageBinding.java
+ com.example.habit_tracker_301f21t46.databinding.FragmentHomepageBinding
+com/example/habit_tracker_301f21t46/AllHabitsFragment.java
+ com.example.habit_tracker_301f21t46.AllHabitsFragment
+ com.example.habit_tracker_301f21t46.AllHabitsFragment$1
+com/example/habit_tracker_301f21t46/databinding/FragmentFollowersBinding.java
+ com.example.habit_tracker_301f21t46.databinding.FragmentFollowersBinding
+com/example/habit_tracker_301f21t46/FollowersFragment.java
+ com.example.habit_tracker_301f21t46.FollowersFragment
+com/example/habit_tracker_301f21t46/ProfileFragment.java
+ com.example.habit_tracker_301f21t46.ProfileFragment
+ com.example.habit_tracker_301f21t46.ProfileFragment$1
+com/example/habit_tracker_301f21t46/databinding/ActivityMainBinding.java
+ com.example.habit_tracker_301f21t46.databinding.ActivityMainBinding
+com/example/habit_tracker_301f21t46/databinding/FragmentHabitDetailsBinding.java
+ com.example.habit_tracker_301f21t46.databinding.FragmentHabitDetailsBinding
+com/example/habit_tracker_301f21t46/databinding/NavHeaderBinding.java
+ com.example.habit_tracker_301f21t46.databinding.NavHeaderBinding
+com/example/habit_tracker_301f21t46/HomePageFragment.java
+ com.example.habit_tracker_301f21t46.HomePageFragment
+com/example/habit_tracker_301f21t46/AddingHabbitFragment.java
+ com.example.habit_tracker_301f21t46.AddingHabbitFragment
+ com.example.habit_tracker_301f21t46.AddingHabbitFragment$1
+ com.example.habit_tracker_301f21t46.AddingHabbitFragment$2
+ com.example.habit_tracker_301f21t46.AddingHabbitFragment$3
+ com.example.habit_tracker_301f21t46.AddingHabbitFragment$4
+com/example/habit_tracker_301f21t46/LoginActivity.java
+ com.example.habit_tracker_301f21t46.LoginActivity
+ com.example.habit_tracker_301f21t46.LoginActivity$1
+ com.example.habit_tracker_301f21t46.LoginActivity$1$1
+ com.example.habit_tracker_301f21t46.LoginActivity$2
+com/example/habit_tracker_301f21t46/HabitData.java
+ com.example.habit_tracker_301f21t46.HabitData
+ com.example.habit_tracker_301f21t46.HabitData$1
+com/example/habit_tracker_301f21t46/HabitDetailsFragment.java
+ com.example.habit_tracker_301f21t46.HabitDetailsFragment
+ com.example.habit_tracker_301f21t46.HabitDetailsFragment$1
+ com.example.habit_tracker_301f21t46.HabitDetailsFragment$2
+ com.example.habit_tracker_301f21t46.HabitDetailsFragment$3
+ com.example.habit_tracker_301f21t46.HabitDetailsFragment$4
+ com.example.habit_tracker_301f21t46.HabitDetailsFragment$5
+com/example/habit_tracker_301f21t46/SingleHabitListAdapter.java
+ com.example.habit_tracker_301f21t46.SingleHabitListAdapter
+com/example/habit_tracker_301f21t46/databinding/HabitViewLayoutBinding.java
+ com.example.habit_tracker_301f21t46.databinding.HabitViewLayoutBinding
+com/example/habit_tracker_301f21t46/RegisterActivity.java
+ com.example.habit_tracker_301f21t46.RegisterActivity
+ com.example.habit_tracker_301f21t46.RegisterActivity$1
+ com.example.habit_tracker_301f21t46.RegisterActivity$1$1
+ com.example.habit_tracker_301f21t46.RegisterActivity$2
+com/example/habit_tracker_301f21t46/databinding/CustomHabitViewLayoutBinding.java
+ com.example.habit_tracker_301f21t46.databinding.CustomHabitViewLayoutBinding
+com/example/habit_tracker_301f21t46/databinding/FragmentProfileBinding.java
+ com.example.habit_tracker_301f21t46.databinding.FragmentProfileBinding
+com/example/habit_tracker_301f21t46/databinding/FragmentAddingHabitBinding.java
+ com.example.habit_tracker_301f21t46.databinding.FragmentAddingHabitBinding
+com/example/habit_tracker_301f21t46/BuildConfig.java
+ com.example.habit_tracker_301f21t46.BuildConfig
+com/example/habit_tracker_301f21t46/databinding/ActivityRegisterBinding.java
+ com.example.habit_tracker_301f21t46.databinding.ActivityRegisterBinding
+com/example/habit_tracker_301f21t46/databinding/FragmentAllHabitsBinding.java
+ com.example.habit_tracker_301f21t46.databinding.FragmentAllHabitsBinding
+com/example/habit_tracker_301f21t46/databinding/FragmentHabitEventDetailsBinding.java
+ com.example.habit_tracker_301f21t46.databinding.FragmentHabitEventDetailsBinding
+com/example/habit_tracker_301f21t46/MainActivity.java
+ com.example.habit_tracker_301f21t46.MainActivity
+com/example/habit_tracker_301f21t46/HabitEventDetailsFragment.java
+ com.example.habit_tracker_301f21t46.HabitEventDetailsFragment
+com/example/habit_tracker_301f21t46/HabitListAdapter.java
+ com.example.habit_tracker_301f21t46.HabitListAdapter
+com/example/habit_tracker_301f21t46/Habit.java
+ com.example.habit_tracker_301f21t46.Habit
+com/example/habit_tracker_301f21t46/HabitEvent.java
+ com.example.habit_tracker_301f21t46.HabitEvent
+ com.example.habit_tracker_301f21t46.HabitEvent$1
