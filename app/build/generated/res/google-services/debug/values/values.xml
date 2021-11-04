@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="default_web_client_id" translatable="false">781087366609-024qk5me5v08cu8kr75nplcrtkmgdo0l.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">781087366609</string>
+    <string name="google_api_key" translatable="false">AIzaSyB9N7SBFEtUqFZBP6yIEh_ECNZas0vW0hg</string>
+    <string name="google_app_id" translatable="false">1:781087366609:android:e1ad3d720bba02f9b194f0</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyB9N7SBFEtUqFZBP6yIEh_ECNZas0vW0hg</string>
+    <string name="google_storage_bucket" translatable="false">habit-tracker-t46.appspot.com</string>
+    <string name="project_id" translatable="false">habit-tracker-t46</string>
+</resources>
