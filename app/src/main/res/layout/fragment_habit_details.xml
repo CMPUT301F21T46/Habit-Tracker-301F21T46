@@ -13,7 +13,8 @@
         android:text="Title"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="76dp" />
+        tools:layout_editor_absoluteY="76dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/edit_reason_view"
@@ -93,5 +94,85 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_reason_view" />
+
+    <Button
+        android:id="@+id/Mon_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        android:text="MON"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Tue_btn"
+        app:layout_constraintEnd_toStartOf="@+id/Tue_btn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Tue_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="Tue"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Wed_btn"
+        app:layout_constraintEnd_toStartOf="@+id/Wed_btn"
+        app:layout_constraintStart_toEndOf="@+id/Mon_btn" />
+
+    <Button
+        android:id="@+id/Wed_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:text="Wed"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Thu_btn"
+        app:layout_constraintEnd_toStartOf="@+id/Thu_btn"
+        app:layout_constraintStart_toEndOf="@+id/Tue_btn" />
+
+    <Button
+        android:id="@+id/Thu_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:text="Thu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Wed_btn"
+        app:layout_constraintTop_toBottomOf="@+id/edit_date_view" />
+
+    <Button
+        android:id="@+id/Fri_btn"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        android:text="Fri"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Sat_btn"
+        app:layout_constraintEnd_toStartOf="@+id/Sat_btn"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/Sat_btn"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="10dp"
+        android:text="Sat"
+        app:layout_constraintEnd_toStartOf="@+id/Sun_btn"
+        app:layout_constraintStart_toEndOf="@+id/Fri_btn"
+        app:layout_constraintTop_toBottomOf="@+id/Tue_btn" />
+
+    <Button
+        android:id="@+id/Sun_btn"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="20dp"
+        android:text="Sun"
+        app:layout_constraintBaseline_toBaselineOf="@+id/Sat_btn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/Sat_btn" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
