@@ -13,7 +13,8 @@
         android:text="Title"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="76dp" />
+        tools:layout_editor_absoluteY="76dp"
+        tools:ignore="MissingConstraints" />
 
     <EditText
         android:id="@+id/edit_reason_view"
@@ -93,5 +94,6 @@
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edit_reason_view" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
