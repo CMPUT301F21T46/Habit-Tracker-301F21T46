@@ -31,6 +31,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
+/**
+ * Fragment for the habit details. Used to edit the details of a habit.
+ * Linked to fragment_habit_details layout.
+ */
 public class HabitDetailsFragment extends Fragment {
     // FireBase
     private FirebaseAuth mAuth;
