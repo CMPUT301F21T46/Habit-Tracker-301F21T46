@@ -12,6 +12,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+/**
+ * Fragment for the home page. Linked to fragment_homepage layout.
+ * The fragment is called by MainAcitivity activity.
+ */
 public class HomePageFragment extends Fragment {
     private ListView listView;
 
