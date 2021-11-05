@@ -18,6 +18,13 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
+/**
+ * RegisterActivity.java handles the login screen. It is linked to the activity_register layout.
+ * It gets username, useremail, password from the UI via a listener and the
+ * uses the Firebase Authentication API to register a new user. These is also a button for going to the
+ * login screen.
+ */
+
 public class RegisterActivity extends AppCompatActivity {
     //FireBase Auth
     private FirebaseAuth mAuth;

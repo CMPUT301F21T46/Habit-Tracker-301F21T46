@@ -20,7 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 /**
  * LoginActivity.java handles the login screen. It is linked to the activity_login layout.
- * It gets username, password from the UI via a listener and the
+ * It gets useremail, password from the UI via a listener and the
  * uses the Firebase Authentication API to login. These is also a button for going to the
  * registration screen.
  */
