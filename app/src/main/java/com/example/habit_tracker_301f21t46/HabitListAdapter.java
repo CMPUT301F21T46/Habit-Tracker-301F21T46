@@ -45,21 +45,33 @@ public class HabitListAdapter extends ArrayAdapter<Habit> {
         Button comment = (Button) convertView.findViewById(R.id.commentOnHabitButton);
         Button photo = (Button) convertView.findViewById(R.id.addPhotoHabitButton);
         Button location = (Button) convertView.findViewById(R.id.addLocationHabitButton);
+
         EditText writtenComment = (EditText) convertView.findViewById(R.id.commentOnHabitEditText);
+        EditText writtenLocation = (EditText) convertView.findViewById(R.id.locationOnHabitEditText);
+
         ImageView habitPhoto = (ImageView) convertView.findViewById(R.id.habitPhoto);
+
         LinearLayout confirmButtons = (LinearLayout) convertView.findViewById(R.id.confirmCommentButtons);
         Button cancelButton = (Button) convertView.findViewById(R.id.cancelCommentButton);
         Button confirmButton = (Button) convertView.findViewById(R.id.confirmCommentButton);
+        LinearLayout confirmLocationButtons = (LinearLayout) convertView.findViewById(R.id.confirmLocationButtons);
+        Button cancelLocationButton = (Button) convertView.findViewById(R.id.cancelLocationButton);
+        Button confirmLocationButton = (Button) convertView.findViewById(R.id.confirmLocationButton);
+
         habitEventComment.setVisibility(View.GONE);
         habitEventLocation.setVisibility(View.GONE);
         confirmButtons.setVisibility(View.GONE);
+        confirmLocationButtons.setVisibility(View.GONE);
         cancelButton.setVisibility(View.GONE);
         confirmButton.setVisibility(View.GONE);
+        cancelLocationButton.setVisibility(View.GONE);
+        confirmLocationButton.setVisibility(View.GONE);
         habitPhoto.setVisibility(View.GONE);
         comment.setVisibility(View.GONE);
         photo.setVisibility(View.GONE);
         location.setVisibility(View.GONE);
         writtenComment.setVisibility(View.GONE);
+        writtenLocation.setVisibility(View.GONE);
 
         tvTitle.setText(title);
 
