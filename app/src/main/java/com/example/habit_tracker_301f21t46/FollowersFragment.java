@@ -9,6 +9,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+/**
+ * fragment intended to handle the followers of a user. Not implemented currently (in terms of functionality)
+ */
 public class FollowersFragment extends Fragment {
     @Nullable
     @Override
