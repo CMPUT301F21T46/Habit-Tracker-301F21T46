@@ -17,6 +17,12 @@ import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.view.MenuItem;
 
+/**
+ * MainActivity.java handles the main screen. It is linked to the activity_main layout.
+ * It mainly handles the navigation drawer (menu/sidebar)
+ * and loads the homepage fragment onto the homescreen.
+ * It handles the various options in the drawers and the activities triggered by such options.
+ */
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
     private DrawerLayout drawer;
