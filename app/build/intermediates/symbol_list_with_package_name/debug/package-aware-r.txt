@@ -1915,16 +1915,23 @@ id BOTTOM_START
 id CTRL
 id FUNCTION
 id FirstFragment
+id Fri_btn
 id META
+id Mon_btn
 id NO_DEBUG
 id SHIFT
 id SHOW_ALL
 id SHOW_PATH
 id SHOW_PROGRESS
 id SYM
+id Sat_btn
 id SecondFragment
+id Sun_btn
 id TOP_END
 id TOP_START
+id Thu_btn
+id Tue_btn
+id Wed_btn
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -2152,6 +2159,7 @@ id habbit_title_view
 id habitCompleted
 id habitEventComment
 id habitEventLocation
+id habitPhoto
 id habits_list
 id header_title
 id hideable
@@ -2256,6 +2264,7 @@ id nav_graph
 id nav_homePage
 id nav_host_fragment_container
 id nav_list
+id nav_plan
 id nav_profile
 id nav_view
 id navigation_bar_item_icon_view
@@ -2554,6 +2563,7 @@ layout fragment_followers
 layout fragment_habit_details
 layout fragment_habit_event_details
 layout fragment_homepage
+layout fragment_plan
 layout fragment_profile
 layout habit_view_layout
 layout material_chip_input_combo

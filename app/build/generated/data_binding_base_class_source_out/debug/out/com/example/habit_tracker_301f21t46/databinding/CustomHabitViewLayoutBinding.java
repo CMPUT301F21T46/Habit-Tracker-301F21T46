@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -62,6 +63,9 @@ public final class CustomHabitViewLayoutBinding implements ViewBinding {
   public final TextView habitEventLocation;
 
   @NonNull
+  public final ImageView habitPhoto;
+
+  @NonNull
   public final EditText locationOnHabitEditText;
 
   @NonNull
@@ -74,8 +78,8 @@ public final class CustomHabitViewLayoutBinding implements ViewBinding {
       @NonNull Button confirmCommentButton, @NonNull LinearLayout confirmCommentButtons,
       @NonNull Button confirmLocationButton, @NonNull LinearLayout confirmLocationButtons,
       @NonNull CheckBox habitCompleted, @NonNull TextView habitEventComment,
-      @NonNull TextView habitEventLocation, @NonNull EditText locationOnHabitEditText,
-      @NonNull TextView textView1) {
+      @NonNull TextView habitEventLocation, @NonNull ImageView habitPhoto,
+      @NonNull EditText locationOnHabitEditText, @NonNull TextView textView1) {
     this.rootView = rootView;
     this.addLocationHabitButton = addLocationHabitButton;
     this.addPhotoHabitButton = addPhotoHabitButton;
@@ -90,6 +94,7 @@ public final class CustomHabitViewLayoutBinding implements ViewBinding {
     this.habitCompleted = habitCompleted;
     this.habitEventComment = habitEventComment;
     this.habitEventLocation = habitEventLocation;
+    this.habitPhoto = habitPhoto;
     this.locationOnHabitEditText = locationOnHabitEditText;
     this.textView1 = textView1;
   }
@@ -199,6 +204,12 @@ public final class CustomHabitViewLayoutBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.habitPhoto;
+      ImageView habitPhoto = ViewBindings.findChildViewById(rootView, id);
+      if (habitPhoto == null) {
+        break missingId;
+      }
+
       id = R.id.locationOnHabitEditText;
       EditText locationOnHabitEditText = ViewBindings.findChildViewById(rootView, id);
       if (locationOnHabitEditText == null) {
@@ -215,7 +226,7 @@ public final class CustomHabitViewLayoutBinding implements ViewBinding {
           addPhotoHabitButton, cancelCommentButton, cancelLocationButton, commentOnHabitButton,
           commentOnHabitEditText, confirmCommentButton, confirmCommentButtons,
           confirmLocationButton, confirmLocationButtons, habitCompleted, habitEventComment,
-          habitEventLocation, locationOnHabitEditText, textView1);
+          habitEventLocation, habitPhoto, locationOnHabitEditText, textView1);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

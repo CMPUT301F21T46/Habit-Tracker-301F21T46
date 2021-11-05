@@ -1,54 +1,58 @@
 [
     {
-        "merged": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_habit_details.xml",
-        "source": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_habit_details.xml"
+        "merged": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_homepage.xml",
+        "source": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_homepage.xml"
     },
     {
-        "merged": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_adding_habit.xml",
-        "source": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_adding_habit.xml"
+        "merged": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_plan.xml",
+        "source": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_plan.xml"
     },
     {
-        "merged": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_followers.xml",
-        "source": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_followers.xml"
+        "merged": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/src/main/res/layout/activity_main.xml"
     },
     {
-        "merged": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_register.xml",
-        "source": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/src/main/res/layout/activity_register.xml"
+        "merged": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_profile.xml",
+        "source": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_profile.xml"
     },
     {
-        "merged": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/habit_view_layout.xml",
-        "source": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/src/main/res/layout/habit_view_layout.xml"
+        "merged": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/habit_view_layout.xml",
+        "source": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/src/main/res/layout/habit_view_layout.xml"
     },
     {
-        "merged": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/custom_habit_view_layout.xml",
-        "source": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/src/main/res/layout/custom_habit_view_layout.xml"
+        "merged": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/custom_habit_view_layout.xml",
+        "source": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/src/main/res/layout/custom_habit_view_layout.xml"
     },
     {
-        "merged": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_all_habits.xml",
-        "source": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_all_habits.xml"
+        "merged": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/nav_header.xml",
+        "source": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/src/main/res/layout/nav_header.xml"
     },
     {
-        "merged": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
-        "source": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/src/main/res/layout/activity_main.xml"
+        "merged": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_habit_event_details.xml",
+        "source": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_habit_event_details.xml"
     },
     {
-        "merged": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/nav_header.xml",
-        "source": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/src/main/res/layout/nav_header.xml"
+        "merged": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_followers.xml",
+        "source": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_followers.xml"
     },
     {
-        "merged": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_homepage.xml",
-        "source": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_homepage.xml"
+        "merged": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_login.xml",
+        "source": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/src/main/res/layout/activity_login.xml"
     },
     {
-        "merged": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_profile.xml",
-        "source": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_profile.xml"
+        "merged": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_habit_details.xml",
+        "source": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_habit_details.xml"
     },
     {
-        "merged": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_habit_event_details.xml",
-        "source": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_habit_event_details.xml"
+        "merged": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_register.xml",
+        "source": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/src/main/res/layout/activity_register.xml"
     },
     {
-        "merged": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_login.xml",
-        "source": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/src/main/res/layout/activity_login.xml"
+        "merged": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_adding_habit.xml",
+        "source": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_adding_habit.xml"
+    },
+    {
+        "merged": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_all_habits.xml",
+        "source": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/src/main/res/layout/fragment_all_habits.xml"
     }
 ]

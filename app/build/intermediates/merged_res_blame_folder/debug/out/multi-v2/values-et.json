@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-et/values-et.xml",
+            "outputFile": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-et/values-et.xml",
             "map": [
                 {
                     "source": "/Users/alyshavanbibber/.gradle/caches/transforms-3/6adff63397c1ac50e331d47bdf613af2/transformed/jetified-play-services-basement-17.1.0/res/values-et/values.xml",

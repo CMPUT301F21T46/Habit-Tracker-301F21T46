@@ -22,6 +22,27 @@ public final class FragmentHabitDetailsBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
+  public final Button FriBtn;
+
+  @NonNull
+  public final Button MonBtn;
+
+  @NonNull
+  public final Button SatBtn;
+
+  @NonNull
+  public final Button SunBtn;
+
+  @NonNull
+  public final Button ThuBtn;
+
+  @NonNull
+  public final Button TueBtn;
+
+  @NonNull
+  public final Button WedBtn;
+
+  @NonNull
   public final Button confirmChangesButton;
 
   @NonNull
@@ -45,12 +66,21 @@ public final class FragmentHabitDetailsBinding implements ViewBinding {
   @NonNull
   public final TextView textView27;
 
-  private FragmentHabitDetailsBinding(@NonNull ConstraintLayout rootView,
+  private FragmentHabitDetailsBinding(@NonNull ConstraintLayout rootView, @NonNull Button FriBtn,
+      @NonNull Button MonBtn, @NonNull Button SatBtn, @NonNull Button SunBtn,
+      @NonNull Button ThuBtn, @NonNull Button TueBtn, @NonNull Button WedBtn,
       @NonNull Button confirmChangesButton, @NonNull Button deleteMedButton,
       @NonNull TextView editDateView, @NonNull EditText editNameView,
       @NonNull EditText editReasonView, @NonNull TextView textView21, @NonNull TextView textView22,
       @NonNull TextView textView27) {
     this.rootView = rootView;
+    this.FriBtn = FriBtn;
+    this.MonBtn = MonBtn;
+    this.SatBtn = SatBtn;
+    this.SunBtn = SunBtn;
+    this.ThuBtn = ThuBtn;
+    this.TueBtn = TueBtn;
+    this.WedBtn = WedBtn;
     this.confirmChangesButton = confirmChangesButton;
     this.deleteMedButton = deleteMedButton;
     this.editDateView = editDateView;
@@ -88,6 +118,48 @@ public final class FragmentHabitDetailsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.Fri_btn;
+      Button FriBtn = ViewBindings.findChildViewById(rootView, id);
+      if (FriBtn == null) {
+        break missingId;
+      }
+
+      id = R.id.Mon_btn;
+      Button MonBtn = ViewBindings.findChildViewById(rootView, id);
+      if (MonBtn == null) {
+        break missingId;
+      }
+
+      id = R.id.Sat_btn;
+      Button SatBtn = ViewBindings.findChildViewById(rootView, id);
+      if (SatBtn == null) {
+        break missingId;
+      }
+
+      id = R.id.Sun_btn;
+      Button SunBtn = ViewBindings.findChildViewById(rootView, id);
+      if (SunBtn == null) {
+        break missingId;
+      }
+
+      id = R.id.Thu_btn;
+      Button ThuBtn = ViewBindings.findChildViewById(rootView, id);
+      if (ThuBtn == null) {
+        break missingId;
+      }
+
+      id = R.id.Tue_btn;
+      Button TueBtn = ViewBindings.findChildViewById(rootView, id);
+      if (TueBtn == null) {
+        break missingId;
+      }
+
+      id = R.id.Wed_btn;
+      Button WedBtn = ViewBindings.findChildViewById(rootView, id);
+      if (WedBtn == null) {
+        break missingId;
+      }
+
       id = R.id.confirmChangesButton;
       Button confirmChangesButton = ViewBindings.findChildViewById(rootView, id);
       if (confirmChangesButton == null) {
@@ -136,9 +208,9 @@ public final class FragmentHabitDetailsBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentHabitDetailsBinding((ConstraintLayout) rootView, confirmChangesButton,
-          deleteMedButton, editDateView, editNameView, editReasonView, textView21, textView22,
-          textView27);
+      return new FragmentHabitDetailsBinding((ConstraintLayout) rootView, FriBtn, MonBtn, SatBtn,
+          SunBtn, ThuBtn, TueBtn, WedBtn, confirmChangesButton, deleteMedButton, editDateView,
+          editNameView, editReasonView, textView21, textView22, textView27);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

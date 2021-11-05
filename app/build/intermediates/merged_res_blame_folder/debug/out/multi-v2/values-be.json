@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/alyshavanbibber/Desktop/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-be/values-be.xml",
+            "outputFile": "/Users/alyshavanbibber/Desktop/HabitTracker/Habit-Tracker-301F21T46/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-be/values-be.xml",
             "map": [
                 {
                     "source": "/Users/alyshavanbibber/.gradle/caches/transforms-3/ebce84e9fd7257a0362f444a0d83c173/transformed/navigation-ui-2.3.5/res/values-be/values-be.xml",
