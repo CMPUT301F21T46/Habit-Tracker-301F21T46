@@ -21,6 +21,9 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
+/**
+ *
+ */
 public class SingleHabitListAdapter extends ArrayAdapter<Habit> {
     //FireBase
     //UI

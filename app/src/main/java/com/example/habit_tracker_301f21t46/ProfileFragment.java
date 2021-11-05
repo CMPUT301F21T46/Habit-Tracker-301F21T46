@@ -11,6 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+/**
+ * It is meant to create a profile for a user according to the fragment_profile layout.
+ * It is not functional in the current version (in terms of meeting the requirements).
+ */
+
 public class ProfileFragment extends Fragment {
     private Button sameFrag;
 

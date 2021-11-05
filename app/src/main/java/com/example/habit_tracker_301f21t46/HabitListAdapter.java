@@ -13,6 +13,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+/**
+ *
+ */
 public class HabitListAdapter extends ArrayAdapter<Habit> {
     //Defines a custom ListAdapter to display the habits
 
