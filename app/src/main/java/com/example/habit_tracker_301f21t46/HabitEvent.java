@@ -10,6 +10,12 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+/**
+ * Contains a Habit Event for a habit for an user
+ * attribute:
+ * comment : (String) comment for a Habit Event
+ * location : (String) location for a Habit Event
+ */
 public class HabitEvent {
 
     private String comment;
