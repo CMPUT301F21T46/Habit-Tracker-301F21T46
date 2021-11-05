@@ -57,6 +57,11 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 //Intent intent = new Intent(this, AllUserHabitsActivity.class);
                 //startActivity(intent);
                 break;
+
+            case R.id.nav_plan:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        new PlanFragment()).commit();
+                break;
             case R.id.nav_profile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         new ProfileFragment()).commit();

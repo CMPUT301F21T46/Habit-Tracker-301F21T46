@@ -1,6 +1,7 @@
 package com.example.habit_tracker_301f21t46;
 
 import android.app.DatePickerDialog;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -18,6 +20,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
@@ -33,8 +36,11 @@ public class AddingHabbitFragment extends Fragment {
     private EditText reason;
     private TextView displayDateView;
     private DatePickerDialog.OnDateSetListener dateSetListener;
+    private Button mon_btn,tue_btn,wed_btn,thu_btn,fri_btn,sat_btn,sun_btn;
     private Button confirm, cancel;
+    private Switch publicSwitch;
     private String pickerDate;
+    private boolean publicHabit = false;
 
     @Nullable
     @Override
@@ -47,8 +53,89 @@ public class AddingHabbitFragment extends Fragment {
         displayDateView = (TextView) view.findViewById(R.id.date_picker_view);
         confirm = view.findViewById(R.id.confirm_new_habbit_button);
         cancel = view.findViewById(R.id.button);
+        mon_btn = view.findViewById(R.id.Mon_btn);
+        tue_btn = view.findViewById(R.id.Tue_btn);
+        wed_btn = view.findViewById(R.id.Wed_btn);
+        thu_btn = view.findViewById(R.id.Thu_btn);
+        fri_btn = view.findViewById(R.id.Fri_btn);
+        sat_btn = view.findViewById(R.id.Sat_btn);
+        sun_btn = view.findViewById(R.id.Sun_btn);
+        publicSwitch = view.findViewById(R.id.public_switch_view);
+
+        final ArrayList<String> days_of_week=new ArrayList<String>();
 
         DatePicker();
+
+        mon_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!days_of_week.contains("monday")) {
+                    days_of_week.add("monday");
+                    mon_btn.setBackgroundColor(Color.rgb(75, 0, 130));
+                }
+            }
+        });
+        tue_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!days_of_week.contains("tuesday")) {
+                    days_of_week.add("tuesday");
+                    tue_btn.setBackgroundColor(Color.rgb(75, 0, 130));
+                }
+            }
+        });
+        wed_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!days_of_week.contains("wednesday")) {
+                    days_of_week.add("wednesday");
+                    wed_btn.setBackgroundColor(Color.rgb(75, 0, 130));
+                }
+            }
+        });
+        thu_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!days_of_week.contains("thursday")) {
+                    days_of_week.add("thursday");
+                    thu_btn.setBackgroundColor(Color.rgb(75, 0, 130));
+                }
+            }
+        });
+        fri_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!days_of_week.contains("friday")) {
+                    days_of_week.add("friday");
+                    fri_btn.setBackgroundColor(Color.rgb(75, 0, 130));
+                }
+            }
+        });
+        sat_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!days_of_week.contains("saturday")) {
+                    days_of_week.add("saturday");
+                    sat_btn.setBackgroundColor(Color.rgb(75, 0, 130));
+                }
+            }
+        });
+        sun_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!days_of_week.contains("sunday")) {
+                    days_of_week.add("sunday");
+                    sun_btn.setBackgroundColor(Color.rgb(75, 0, 130));
+                }
+            }
+        });
+
+        publicSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                publicHabit = !publicHabit;
+            }
+        });
 
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,6 +155,8 @@ public class AddingHabbitFragment extends Fragment {
                 habit.put("habitReason", newReason);
                 habit.put("startDate", newDate);
                 habit.put("habitID", uniqueID);
+                habit.put("days_of_week", days_of_week);
+                habit.put("publicHabit", publicHabit);
                 documentReference.set(habit);
 
                 AllHabitsFragment nextFrag = new AllHabitsFragment();
