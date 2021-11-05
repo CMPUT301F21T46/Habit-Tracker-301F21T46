@@ -14,7 +14,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 /**
- *
+ * HabitList adapter for expanded habit (on homepage) with comment, photo, location ,etc.
  */
 public class HabitListAdapter extends ArrayAdapter<Habit> {
     //Defines a custom ListAdapter to display the habits
