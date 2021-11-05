@@ -1,0 +1,265 @@
+#
+# Product Backlog
+#
+# The story point estimation is done using the Fibonacci sequence
+# Numbering is done according the US number
+# For task assignments see GitHub issues
+#
+# Total Story Points
+# 72
+#
+# Total Completed
+# 30
+#
+#----- To be completed by Halfway point mark -----
+# US 01.01.01 DONE
+# US 01.03.01 DONE
+# US 01.04.01 DONE
+# US 01.05.01 DONE
+# US 01.06.01 DONE
+# US 01.02.01 DONE
+# US 01.08.01 DONE
+# US 02.01.01 DONE
+# US 02.02.01 DONE
+# US 03.01.01 DONE
+
+
+#----- High Priority User Requirements -----
+
+US 01.01.01
+As a doer, I want to add a habit, giving it a brief title, reason, date to start, and whether it is public or private.
+	
+	Risk Level: medium
+	Story points: 3
+	Completed: True
+	
+	Acceptance criteria:
+	Given a title, reason and date when the user enters these details then a new Habit is created.
+	
+US 01.02.01
+As a doer, I want a habit to have a plan for what days of the week it should regularly occur.
+
+	Risk Level: medium
+	Story points: 3
+	Completed: True
+	
+	Acceptance criteria:
+	Given a habit when the user selects what days of the week it should occur then a plan must be created for that Habit.
+	
+US 01.08.01
+As a doer, I want to see a list of all my habits.
+	
+	Risk Level: medium
+	Story points: 3
+	Completed: True
+	
+	Acceptance criteria:
+	Given all habits when the user wants to see them then a list should show all habits.
+	
+US 01.09.01
+As a doer, I want for each habit on the list, a visual indicator to show how closely I am following its plan over time.
+	
+	Risk Level: High
+	Story points: 8
+	Completed: False
+	
+	Acceptance criteria:
+	Given a list of habits and a plan for each habit when the list shows up then a visual indicator should be shown next to each habit (or show in the habit's details).
+	
+US 02.01.01
+As a doer, I want to denote a habit event when I have done a habit as planned. Risk Level: medium
+	
+	Risk Level: high
+	Story points: 3 
+	Completed: True
+	
+	Acceptance criteria:
+	Given a habit and a habit plan when the user does a habit then a habit event should be created.
+	
+US 03.01.01
+As a doer, I want to be uniquely identifiable in the system.
+	
+	Risk Level: high
+	Story points: 13
+	Completed: True
+	
+	Acceptance criteria:
+	Given the app when a user opens it then a log in/register screen should allow the user to become uniquely indentifiable in the system.
+	
+US 05.01.01
+As a doer, I want to ask another doer to follow all their public habits.
+	
+	Risk Level: high
+	Story points: 8 
+	Completed: False
+	
+	Acceptance criteria:
+	Given users when a user want to follow another user then a follow prompt should appear and their habits should be displayed to the user.
+	
+
+#----- Medium Priority Functional Requirements (features) -----
+
+US 01.05.01
+As a doer, I want to delete a habit of mine, and any corresponding habit events.
+
+	
+	Risk Level: low
+	Story points: 1 
+	Completed: True (Habit can be deleted but habit events are still not implemented)
+	
+	Acceptance criteria:
+	Given a habit when a user wishes to delete then the habits should be erased from the system.
+	
+US 02.05.01
+As a doer, I want to edit the details of a habit event of mine. 
+	
+	Risk Level: low	
+	Story points: 1
+	Completed: True
+	
+	Acceptance criteria:
+	Given a habit when a user click on it then all the details of that habit should be shown and be editable.
+	
+US 02.06.01
+As a doer, I want to delete a habit event of mine.
+
+	Risk Level: low
+	Story points: 1
+	Completed: False
+	
+	Acceptance criteria:
+	Given a habit event when a user wishes to delete it then the habit event should be erased from the system.
+	
+US 01.03.01
+As a doer, I want to view a given habit and its details.
+	
+	Risk Level: low
+	Story points: 1
+	Completed: True
+	
+	Acceptance criteria:
+	Given a habit event when a user click on it then all of its details should be shown.
+	
+US 01.07.01
+As a doer, I want to see what habits I need to do today.
+	
+	Risk Level: medium
+	Story points: 3
+	Completed: False
+	
+	Acceptance criteria:
+	Given habits when a user wishes to see what habits he needs to do today then a list showing those habits should be shown.
+	
+US 02.04.01
+As a doer, I want to view a given habit event and all its available details.
+
+	Risk Level: low
+	Story points: 1
+	Completed: False
+	
+	Acceptance criteria:
+	Given a habit event when a user wishes to see its details then all the details should be shown.
+
+US 05.03.01
+As a doer, I want to view the public habits and visual indicators of the other doers I am granted to follow. 
+	
+	Risk Level: high
+	Story points: 13
+	Completed: False
+	
+	Acceptance criteria:
+	Given followed users when the user want to see their habits then visual indicators of the other habits should also be shown.
+	
+US 05.02.01
+As a doer, I want to grant or deny another doer permission to follow all my public habits.
+
+	Risk Level: high
+	Story points: 5
+	Completed: False
+	
+	Acceptance criteria:
+	Given other users requesting to follow when a user is promped to allow this then he should be able to deny or accept this request.
+	
+US 01.04.01
+As a doer, I want to edit the details of a habit of mine.
+
+	Risk Level: low
+	Story points: 1
+	Completed: True
+	
+	Acceptance criteria:
+	Given a habit event when a user wishes to see its details then all the details should be shown and editable.
+	
+
+#----- Low Priority Functional Requirements (features) -----
+
+US 06.01.01
+As a doer, I want to a habit event to have an optional location to record where it happened.
+	
+	Risk Level: low
+	Story points: 1
+	Completed: False
+	
+	Acceptance criteria:
+	Given a habit event when a user clicks on add location then the current user's location should be recorded and saved to that habit event.
+	
+US 01.06.01
+As a doer, I want a habit title to be up to 20 characters and habit reason to be up to 30 characters.
+
+	Risk Level: low
+	Story points: 1
+	Completed: True
+	
+	Acceptance criteria:
+	Self-explanatory.
+	
+US 02.02.01
+As a doer, I want a habit event to have an optional comment of up to 20 characters
+
+	Risk Level: low
+	Story points: 1
+	Completed: True
+	
+	Acceptance criteria:
+	Self-explanatory.
+	
+US 02.03.01
+As a doer, I want a habit event to have an optional photograph to record what happened.
+ 	
+ 	Risk Level: low
+ 	Story points: 1
+	Completed: false
+	
+	Acceptance criteria:
+	Given a habit event when a user clicks ona dd photo then a picture should be allowed to be uploaded.
+	
+US 01.08.02 [new]
+As a doer, I want to manually reorder habits on my list of habits.
+
+	Risk Level: low
+ 	Story points: 1
+	Completed: false
+	
+	Acceptance criteria:
+	Given a habit list when a user holds on a habit then he should be able to move it up or down in the list.
+	
+US 02.03.02 [new]
+As a doer, I want the photograph for a habit event to be taken with the camera within the app.
+
+	Risk Level: low
+ 	Story points: 3
+	Completed: false
+	
+	Acceptance criteria:
+	Given the photograph optiop when a user clicks it then it he should be able to take the photo with the camera on his phone.
+	
+US 06.01.02 [new]
+As a doer, I want the location for a habit event to be specified using a map within the app, with the current phone position as the default location.
+
+	Risk Level: high
+ 	Story points: 8
+	Completed: false
+	
+	Acceptance criteria:
+	Given the location option when a user clicks it then he should be able to specify his location with a map.  
+	
