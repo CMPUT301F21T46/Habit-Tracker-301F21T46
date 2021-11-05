@@ -111,4 +111,12 @@ public class Habit {
      * @param days_of_week (ArrayList<String>) days_of_week containg days of week for habit
      */
     public void setDays_of_week(ArrayList<String> days_of_week) { this.days_of_week = days_of_week; }
+    @Override
+    public boolean equals(Object obj){
+        if (obj == null)
+            return false;
+        if (obj == this)
+            return true;
+        return ((Habit) obj).title.equals(this.title) && ((Habit) obj).reason.equals(this.reason) && ((Habit) obj).startDate.equals(this.startDate) && ((Habit) obj).habitID.equals(this.habitID) && ((Habit) obj).days_of_week.equals(this.days_of_week);
+    }
 }
