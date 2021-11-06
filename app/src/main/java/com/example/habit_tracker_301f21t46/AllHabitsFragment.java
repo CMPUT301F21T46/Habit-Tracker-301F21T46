@@ -14,6 +14,10 @@ import androidx.fragment.app.Fragment;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
+/**
+ * Fragment shows a list of all habits of a user. Linked to fragment_all_habits layout.
+ * Uses habits_list as a ListView and this is linked to the list of habits in Habitdata for a user.
+ */
 public class AllHabitsFragment extends Fragment {
 
     @Nullable

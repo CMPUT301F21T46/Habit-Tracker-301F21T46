@@ -21,6 +21,10 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.ArrayList;
 
+/**
+ * Fragment for indicating days of week when the habit takes place.
+ * Linked to fragment_plan layout
+ */
 public class PlanFragment extends Fragment {
 
     private Button mon_btn,tue_btn,wed_btn,thu_btn,fri_btn,sat_btn,sun_btn;

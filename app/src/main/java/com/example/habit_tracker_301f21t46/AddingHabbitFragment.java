@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -25,6 +26,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+/**
+ * Fragments that handles adding habits (through a dialog box).
+ * Linked to fragment_adding_habit.
+ * Takes in details like title, reason, start date from UI.
+ * The date is selected via a datepicker
+ */
 public class AddingHabbitFragment extends Fragment {
     // FireBase
     private FirebaseAuth mAuth;
@@ -37,7 +44,9 @@ public class AddingHabbitFragment extends Fragment {
     private DatePickerDialog.OnDateSetListener dateSetListener;
     private Button mon_btn,tue_btn,wed_btn,thu_btn,fri_btn,sat_btn,sun_btn;
     private Button confirm, cancel;
+    private Switch publicSwitch;
     private String pickerDate;
+    private boolean publicHabit = false;
 
     @Nullable
     @Override
@@ -50,13 +59,14 @@ public class AddingHabbitFragment extends Fragment {
         displayDateView = (TextView) view.findViewById(R.id.date_picker_view);
         confirm = view.findViewById(R.id.confirm_new_habbit_button);
         cancel = view.findViewById(R.id.button);
-        mon_btn=view.findViewById(R.id.Mon_btn);
-        tue_btn=view.findViewById(R.id.Tue_btn);
-        wed_btn=view.findViewById(R.id.Wed_btn);
-        thu_btn=view.findViewById(R.id.Thu_btn);
-        fri_btn=view.findViewById(R.id.Fri_btn);
-        sat_btn=view.findViewById(R.id.Sat_btn);
-        sun_btn=view.findViewById(R.id.Sun_btn);
+        mon_btn = view.findViewById(R.id.Mon_btn);
+        tue_btn = view.findViewById(R.id.Tue_btn);
+        wed_btn = view.findViewById(R.id.Wed_btn);
+        thu_btn = view.findViewById(R.id.Thu_btn);
+        fri_btn = view.findViewById(R.id.Fri_btn);
+        sat_btn = view.findViewById(R.id.Sat_btn);
+        sun_btn = view.findViewById(R.id.Sun_btn);
+        publicSwitch = view.findViewById(R.id.public_switch_view);
 
         final ArrayList<String> days_of_week=new ArrayList<String>();
 
@@ -126,6 +136,13 @@ public class AddingHabbitFragment extends Fragment {
             }
         });
 
+        publicSwitch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                publicHabit = !publicHabit;
+            }
+        });
+
         confirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -144,7 +161,8 @@ public class AddingHabbitFragment extends Fragment {
                 habit.put("habitReason", newReason);
                 habit.put("startDate", newDate);
                 habit.put("habitID", uniqueID);
-                habit.put("days_of_week",days_of_week);
+                habit.put("days_of_week", days_of_week);
+                habit.put("publicHabit", publicHabit);
                 documentReference.set(habit);
 
                 AllHabitsFragment nextFrag = new AllHabitsFragment();
