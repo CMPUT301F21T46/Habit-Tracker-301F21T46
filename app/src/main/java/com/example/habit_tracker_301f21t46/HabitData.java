@@ -17,6 +17,13 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
+/**
+ * Holds all the habits for a specific user (each user will have their own habit data)
+ * attributes -
+ * habitList: ArrayList<Habit> that stores all habits for a user
+ * HabitListAdapter and SingleHabitListAdapter: adapter for display habits for a user
+ * selectedHabitIndex: array index for selected habit for a user
+ */
 public class HabitData {
     //Holds all the habits for a specific user (each user will have their own habit data)
     //Defines a custom arrayAdapter to be used to display habits
@@ -64,8 +71,13 @@ public class HabitData {
 
     }
 
+    /**
+     * exposes HabitData as a singleton so data can be accessed from other classes
+     * @param activity: get current activity as Context objects
+     * @param layout
+     * @return instance (HabitData object) as a singleton
+     */
     public static HabitData getInstance(Context activity, int layout){
-        //Will expose HabitData as a singleton so data can be accessed from other classes
         if (instance == null){
             instance = new HabitData(activity,layout);
         }
@@ -73,35 +85,77 @@ public class HabitData {
     }
 
     // ----- Getters and Setters -----
+
+    /**
+     * getter for HabitData instance (used if instance has habitdata) (class shadowing)
+     * @return HabitData instance
+     */
     public static HabitData getInstance() {
         return instance;
     }
+
+    /**
+     * setter for HabitData instance
+     * @param instance HabitData object
+     */
     public static void setInstance(HabitData instance) {
         HabitData.instance = instance;
     }
+
+    /**
+     * getter for HabitList
+     * @return habitList (ArrayList<Habit>) containing habits for user
+     */
     public ArrayList<Habit> getHabitList() {
         return habitList;
     }
+
+    /**
+     * setter for HabitList
+     * @param habitList (ArrayList<Habit>) containing habits for user
+     */
     public void setHabitList(ArrayList<Habit> habitList) {
         this.habitList = habitList;
     }
+    /**
+     * getter for HabitListAdapter
+     * @return habitListAdapter (HabitListAdapter) containing an adapter for HabitList
+     */
     public HabitListAdapter getHabitListAdapter() {
         return habitListAdapter;
     }
+    /**
+     * setter for HabitListAdapter
+     * @param habitListAdapter (HabitListAdapter) containing an adapter for HabitList
+     */
     public void setHabitListAdapter(HabitListAdapter habitListAdapter) {
         this.habitListAdapter = habitListAdapter;
     }
+    /**
+     * getter for singleHabitListAdapter
+     * @return singleHabitListAdapter (SingleHabitListAdapter) containing an adapter for HabitList
+     */
     public SingleHabitListAdapter getSingleHabitListAdapter() {
         return singleHabitListAdapter;
     }
+    /**
+     * setter for singleHabitListAdapter
+     * @param singleHabitListAdapter (SingleHabitListAdapter) containing an adapter for HabitList
+     */
     public void setSingleHabitListAdapter(SingleHabitListAdapter singleHabitListAdapter) {
         this.singleHabitListAdapter = singleHabitListAdapter;
     }
-
+    /**
+     * getter for selectedHabitIndex
+     * @return selectedHabitIndex (int) containing an index for selected habit
+     */
     public int getSelectedHabitIndex() {
         return selectedHabitIndex;
     }
-
+    /**
+     * getter for selectedHabitIndex
+     * @param selectedHabitIndex (int) containing an index for selected habit
+     */
     public void setSelectedHabitIndex(int selectedHabitIndex) {
         this.selectedHabitIndex = selectedHabitIndex;
     }

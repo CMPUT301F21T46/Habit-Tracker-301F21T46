@@ -26,6 +26,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+/**
+ * Fragments that handles adding habits (through a dialog box).
+ * Linked to fragment_adding_habit.
+ * Takes in details like title, reason, start date from UI.
+ * The date is selected via a datepicker
+ */
 public class AddingHabbitFragment extends Fragment {
     // FireBase
     private FirebaseAuth mAuth;
