@@ -49,7 +49,6 @@ public class AddingHabbitFragment extends Fragment {
 
         title = view.findViewById(R.id.habbit_title_view);
         reason = view.findViewById(R.id.habbit_reason_view);
-        //Todo implement DatePicker
         displayDateView = (TextView) view.findViewById(R.id.date_picker_view);
         confirm = view.findViewById(R.id.confirm_new_habbit_button);
         cancel = view.findViewById(R.id.button);

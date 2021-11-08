@@ -5,6 +5,21 @@
     android:background="@color/white">
 
     <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_alignParentStart="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-3dp"
+        android:layout_marginTop="293dp"
+        android:background="#000000"
+        android:text="_AllUsers"
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp" />
+
+    <TextView
         android:id="@+id/textView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -35,4 +50,15 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="24sp" />
+
+    <ListView
+        android:id="@+id/all_users_view_home"
+        android:layout_width="match_parent"
+        android:layout_height="303dp"
+        android:layout_below="@+id/textView6"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="68dp" />
 </RelativeLayout>

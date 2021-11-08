@@ -17,10 +17,17 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RegisterActivity extends AppCompatActivity {
     //FireBase Auth
     private FirebaseAuth mAuth;
+    private FirebaseFirestore mStore;
     //UI
     EditText userName, userEmail, userPassword, userConfirmPassword;
     Button registerButton;
@@ -33,6 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
 
         // Initialize Firebase Auth
         mAuth = FirebaseAuth.getInstance();
+        mStore = FirebaseFirestore.getInstance();
         // Connect UI
         userName = findViewById(R.id.user_name);
         userEmail = findViewById(R.id.user_email);
@@ -51,6 +59,8 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String email = userEmail.getText().toString();
                 String password = userPassword.getText().toString();
+                String confirmPassword = userConfirmPassword.getText().toString();
+                String name = userName.getText().toString();
 
                 /* Todo: Implement user data checks
                 String confirmPassword = userConfirmPassword.getText().toString();
@@ -62,9 +72,20 @@ public class RegisterActivity extends AppCompatActivity {
                         if (task.isSuccessful()){
                             // Sign in success
                             Log.d(TAG, "createUserWithEmail:success");
-                            /* Todo: store name into FireStore, use userID for collection, later profile pic might be added
 
-                             */
+                            DocumentReference documentReference = mStore.collection("Users").document(email);
+                            Map<String, Object> user = new HashMap<>();
+                            user.put("name", name);
+                            user.put("email", email);
+                            user.put("password", password);
+                            ArrayList<String> following = new ArrayList<>();
+                            user.put("following", following);
+                            ArrayList<String> followers = new ArrayList<>();
+                            user.put("followers", followers);
+                            ArrayList<String> followRequest = new ArrayList<>();
+                            user.put("followRequest", followRequest);
+                            documentReference.set(user);
+
                             // Start MainActivity
                             startActivity(new Intent(getApplicationContext(), MainActivity.class));
                         } else {

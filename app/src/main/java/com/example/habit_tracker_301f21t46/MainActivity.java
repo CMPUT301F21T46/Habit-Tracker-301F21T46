@@ -25,7 +25,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        HabitData initInstance = HabitData.getInstance(this,R.layout.activity_main);
+        HabitData initHabitInstance = HabitData.getInstance(this,R.layout.activity_main);
+        UsersData initUsersInstance = UsersData.getInstance(this,R.layout.activity_main);
 
         //Setting up toolbar and navigation drawer
         // Todo: figure out how to make the drawer global (appear on all other activities)
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
             case R.id.nav_profile:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
-                        new ProfileFragment()).commit();
+                        new AllUsersFragment()).commit();
                 break;
             case R.id.nav_following:
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
