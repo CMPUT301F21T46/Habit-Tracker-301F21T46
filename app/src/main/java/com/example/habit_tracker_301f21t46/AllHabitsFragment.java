@@ -43,6 +43,8 @@ public class AllHabitsFragment extends Fragment {
             }
         });
 
+
+
         // adding habits
         final FloatingActionButton addCityButton = view.findViewById(R.id.add_habit_button);
         addCityButton.setOnClickListener((v) -> {

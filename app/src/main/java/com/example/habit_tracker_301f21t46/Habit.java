@@ -34,6 +34,12 @@ public class Habit {
         this.days_of_week = days_of_week;
     }
 
+    public void dohabiton(){
+        this.completed=true;
+    }
+    public void reset(){
+        this.completed=false;
+    }
     //----- Getters and Setters -----
 
     /**
