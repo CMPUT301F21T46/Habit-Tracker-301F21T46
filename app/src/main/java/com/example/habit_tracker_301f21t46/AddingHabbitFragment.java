@@ -67,15 +67,15 @@ public class AddingHabbitFragment extends Fragment {
         sun_btn = view.findViewById(R.id.Sun_btn);
         publicSwitch = view.findViewById(R.id.public_switch_view);
 
-        final ArrayList<String> days_of_week=new ArrayList<String>();
+        final ArrayList<String> days_of_week_plan=new ArrayList<String>();
 
         DatePicker();
 
         mon_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!days_of_week.contains("monday")) {
-                    days_of_week.add("monday");
+                if(!days_of_week_plan.contains("monday")) {
+                    days_of_week_plan.add("monday");
                     mon_btn.setBackgroundColor(Color.rgb(75, 0, 130));
                 }
             }
@@ -83,8 +83,8 @@ public class AddingHabbitFragment extends Fragment {
         tue_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!days_of_week.contains("tuesday")) {
-                    days_of_week.add("tuesday");
+                if(!days_of_week_plan.contains("tuesday")) {
+                    days_of_week_plan.add("tuesday");
                     tue_btn.setBackgroundColor(Color.rgb(75, 0, 130));
                 }
             }
@@ -92,8 +92,8 @@ public class AddingHabbitFragment extends Fragment {
         wed_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!days_of_week.contains("wednesday")) {
-                    days_of_week.add("wednesday");
+                if(!days_of_week_plan.contains("wednesday")) {
+                    days_of_week_plan.add("wednesday");
                     wed_btn.setBackgroundColor(Color.rgb(75, 0, 130));
                 }
             }
@@ -101,8 +101,8 @@ public class AddingHabbitFragment extends Fragment {
         thu_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!days_of_week.contains("thursday")) {
-                    days_of_week.add("thursday");
+                if(!days_of_week_plan.contains("thursday")) {
+                    days_of_week_plan.add("thursday");
                     thu_btn.setBackgroundColor(Color.rgb(75, 0, 130));
                 }
             }
@@ -110,8 +110,8 @@ public class AddingHabbitFragment extends Fragment {
         fri_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!days_of_week.contains("friday")) {
-                    days_of_week.add("friday");
+                if(!days_of_week_plan.contains("friday")) {
+                    days_of_week_plan.add("friday");
                     fri_btn.setBackgroundColor(Color.rgb(75, 0, 130));
                 }
             }
@@ -119,8 +119,8 @@ public class AddingHabbitFragment extends Fragment {
         sat_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!days_of_week.contains("saturday")) {
-                    days_of_week.add("saturday");
+                if(!days_of_week_plan.contains("saturday")) {
+                    days_of_week_plan.add("saturday");
                     sat_btn.setBackgroundColor(Color.rgb(75, 0, 130));
                 }
             }
@@ -128,8 +128,8 @@ public class AddingHabbitFragment extends Fragment {
         sun_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(!days_of_week.contains("sunday")) {
-                    days_of_week.add("sunday");
+                if(!days_of_week_plan.contains("sunday")) {
+                    days_of_week_plan.add("sunday");
                     sun_btn.setBackgroundColor(Color.rgb(75, 0, 130));
                 }
             }
@@ -160,7 +160,7 @@ public class AddingHabbitFragment extends Fragment {
                 habit.put("habitReason", newReason);
                 habit.put("startDate", newDate);
                 habit.put("habitID", uniqueID);
-                habit.put("days_of_week", days_of_week);
+                habit.put("days_of_week_plan", days_of_week_plan);
                 habit.put("publicHabit", publicHabit);
                 documentReference.set(habit);
 

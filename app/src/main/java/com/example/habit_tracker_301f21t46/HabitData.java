@@ -61,8 +61,8 @@ public class HabitData {
                     String habitReason = (String) doc.getData().get("habitReason");
                     String habitStartDate = (String) doc.getData().get("startDate");
                     String habitID = (String) doc.getData().get("habitID");
-                    ArrayList<String> days_of_week = (ArrayList<String>) doc.getData().get("days_of_week");
-                    habitList.add(new Habit(habitTitle, habitReason, habitStartDate, habitID,days_of_week));
+                    ArrayList<String> days_of_week_plan = (ArrayList<String>) doc.getData().get("days_of_week_plan");
+                    habitList.add(new Habit(habitTitle, habitReason, habitStartDate, habitID,days_of_week_plan));
                 }
                 singleHabitListAdapter.notifyDataSetChanged();
                 habitListAdapter.notifyDataSetChanged();
