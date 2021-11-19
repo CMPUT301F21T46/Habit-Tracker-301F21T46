@@ -17,6 +17,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Contains a Habit Event for a habit for an user
@@ -57,6 +59,22 @@ public class HabitEvent{
 
     }
 
+    private void updateComment(String comment){
+        Date d = new Date();
+        String s = (String) DateFormat.format("yyyy/MM/dd", d.getTime());
+        String date = s.replaceAll("/","-");
+        final DocumentReference documentReference = mStore.collection(mAuth.getCurrentUser().getEmail()).document(habitID).collection("HabitEvent").document(date);
+        documentReference.update("comment", comment);
+    }
+
+    private void updateLocation(String location){
+        Date d = new Date();
+        String s = (String) DateFormat.format("yyyy/MM/dd", d.getTime());
+        String date = s.replaceAll("/","-");
+        final DocumentReference documentReference = mStore.collection(mAuth.getCurrentUser().getEmail()).document(habitID).collection("HabitEvent").document(date);
+        documentReference.update("location", location);
+    }
+
     private void onChecked(View habitView, boolean isClicked) {
         Button addPhoto = (Button) habitView.findViewById(R.id.addPhotoHabitButton);
         Button addLocation = (Button) habitView.findViewById(R.id.addLocationHabitButton);
@@ -71,13 +89,22 @@ public class HabitEvent{
             habitEventData = new HabitEventData(s);
             String date = habitEventData.getDate();
             date = date.replaceAll("/","-");
+            Map<String, Object> habitevent = new HashMap<>();
+            habitevent.put("date", date);
+            habitevent.put("comment", "");
+            habitevent.put("photo", "");
+            habitevent.put("location","");
+            documentReference.collection("HabitEvent").document(date).set(habitevent);
             addComment.setOnClickListener((View view) -> {
                 addComment(habitView, habitEventData);
             });
             addLocation.setOnClickListener((View view) -> {
                 addLocation(habitView, habitEventData);
             });
-            documentReference.collection("HabitEvent").document(date).set(habitEventData);
+            //TextView habitEventComment = (TextView) habitView.findViewById(R.id.habitEventComment);
+            //String comment = (String) habitEventComment.getText();
+            //habitEventData.setComment(comment);
+            //documentReference.collection("HabitEvent").document(date).set(habitEventData);
         } else {
             // Will need to delete any info if have added a comment/photo/location
             comment = "";
@@ -150,6 +177,7 @@ public class HabitEvent{
         EditText writtenComment = (EditText) habitView.findViewById(R.id.commentOnHabitEditText);
 
         comment = writtenComment.getText().toString();
+        updateComment(comment);
         habitEventData.setComment(comment);
         habitEventComment.setText(comment);
         cancelComment(habitView);
@@ -212,6 +240,7 @@ public class HabitEvent{
         EditText writtenLocation = (EditText) habitView.findViewById(R.id.locationOnHabitEditText);
 
         location = writtenLocation.getText().toString();
+        updateLocation(location);
         habitEventData.setLocation(location);
         habitEventLocation.setText(location);
         cancelLocation(habitView);
