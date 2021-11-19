@@ -1,5 +1,6 @@
 package com.example.habit_tracker_301f21t46;
 
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,13 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.Date;
 
 /**
  * Contains a Habit Event for a habit for an user
@@ -20,8 +28,15 @@ public class HabitEvent{
 
     private String comment;
     private String location;
+    private FirebaseAuth mAuth;
+    private FirebaseFirestore mStore;
+    private String habitID;
+    public HabitEventData habitEventData;
 
-    public HabitEvent() {
+    public HabitEvent(String habitID) {
+        this.habitID = habitID;
+        mAuth = FirebaseAuth.getInstance();
+        mStore = FirebaseFirestore.getInstance();
     }
 
     public void Initialize(View habitView) {
@@ -46,18 +61,23 @@ public class HabitEvent{
         Button addPhoto = (Button) habitView.findViewById(R.id.addPhotoHabitButton);
         Button addLocation = (Button) habitView.findViewById(R.id.addLocationHabitButton);
         Button addComment = (Button) habitView.findViewById(R.id.commentOnHabitButton);
-
         if (isClicked) {
+            final DocumentReference documentReference = mStore.collection(mAuth.getCurrentUser().getEmail()).document(habitID);
             addComment.setVisibility(View.VISIBLE);
             addPhoto.setVisibility(View.VISIBLE);
             addLocation.setVisibility(View.VISIBLE);
-
+            Date d = new Date();
+            CharSequence s = DateFormat.format("yyyy/MM/dd", d.getTime());
+            habitEventData = new HabitEventData(s);
+            String date = habitEventData.getDate();
+            date = date.replaceAll("/","-");
             addComment.setOnClickListener((View view) -> {
-                addComment(habitView);
+                addComment(habitView, habitEventData);
             });
             addLocation.setOnClickListener((View view) -> {
-                addLocation(habitView);
+                addLocation(habitView, habitEventData);
             });
+            documentReference.collection("HabitEvent").document(date).set(habitEventData);
         } else {
             // Will need to delete any info if have added a comment/photo/location
             comment = "";
@@ -71,7 +91,7 @@ public class HabitEvent{
         }
     }
 
-    private void addComment(View habitView) {
+    private HabitEventData addComment(View habitView, HabitEventData habitEventData) {
 
         Button addComment = (Button) habitView.findViewById(R.id.commentOnHabitButton);
         TextView habitEventComment = (TextView) habitView.findViewById(R.id.habitEventComment);
@@ -80,7 +100,6 @@ public class HabitEvent{
         Button confirmButton = (Button) habitView.findViewById(R.id.confirmCommentButton);
         Button cancelButton = (Button) habitView.findViewById(R.id.cancelCommentButton);
         LinearLayout confirmButtons = (LinearLayout) habitView.findViewById(R.id.confirmCommentButtons);
-
         writtenComment.setText(comment);
         addComment.setVisibility(View.GONE);
         habitEventComment.setVisibility(View.GONE);
@@ -90,12 +109,14 @@ public class HabitEvent{
         cancelButton.setVisibility(View.VISIBLE);
 
         confirmButton.setOnClickListener((View view) -> {
-            confirmComment(habitView);
+            confirmComment(habitView, habitEventData);
         });
 
         cancelButton.setOnClickListener((View view)  -> {
             cancelComment(habitView);
         });
+
+        return habitEventData;
     }
 
     private void cancelComment(View habitView) {
@@ -122,19 +143,19 @@ public class HabitEvent{
         cancelButton.setVisibility(View.GONE);
     }
 
-    private void confirmComment(View habitView) {
+    private void confirmComment(View habitView, HabitEventData habitEventData) {
 
         Button addComment = (Button) habitView.findViewById(R.id.commentOnHabitButton);
         TextView habitEventComment = (TextView) habitView.findViewById(R.id.habitEventComment);
         EditText writtenComment = (EditText) habitView.findViewById(R.id.commentOnHabitEditText);
 
         comment = writtenComment.getText().toString();
-
+        habitEventData.setComment(comment);
         habitEventComment.setText(comment);
         cancelComment(habitView);
     }
 
-    private void addLocation(View habitView) {
+    private void addLocation(View habitView, HabitEventData habitEventData) {
         Button addLocation = (Button) habitView.findViewById(R.id.addLocationHabitButton);
         TextView habitEvenLocation = (TextView) habitView.findViewById(R.id.habitEventLocation);
 
@@ -152,7 +173,7 @@ public class HabitEvent{
         cancelButton.setVisibility(View.VISIBLE);
 
         confirmButton.setOnClickListener((View view) -> {
-            confirmLocation(habitView);
+            confirmLocation(habitView, habitEventData);
         });
 
         cancelButton.setOnClickListener((View view)  -> {
@@ -185,13 +206,13 @@ public class HabitEvent{
         cancelButton.setVisibility(View.GONE);
     }
 
-    private void confirmLocation(View habitView) {
+    private void confirmLocation(View habitView, HabitEventData habitEventData) {
         Button addLocation = (Button) habitView.findViewById(R.id.addLocationHabitButton);
         TextView habitEventLocation = (TextView) habitView.findViewById(R.id.habitEventLocation);
         EditText writtenLocation = (EditText) habitView.findViewById(R.id.locationOnHabitEditText);
 
         location = writtenLocation.getText().toString();
-
+        habitEventData.setLocation(location);
         habitEventLocation.setText(location);
         cancelLocation(habitView);
     }

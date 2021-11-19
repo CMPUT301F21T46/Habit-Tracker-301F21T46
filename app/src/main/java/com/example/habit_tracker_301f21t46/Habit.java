@@ -30,7 +30,7 @@ public class Habit {
         this.startDate = startDate;
         this.habitID = habitID;
         this.completed = false; //TODO this needs to be reset at the beginning of everyday in the habit plan
-        this.habitEvent = new HabitEvent();
+        this.habitEvent = new HabitEvent(habitID);
         this.days_of_week = days_of_week;
     }
 
