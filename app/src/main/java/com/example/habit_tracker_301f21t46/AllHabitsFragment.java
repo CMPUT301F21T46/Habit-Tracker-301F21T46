@@ -1,12 +1,15 @@
 package com.example.habit_tracker_301f21t46;
 
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -19,7 +22,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
  * Uses habits_list as a ListView and this is linked to the list of habits in Habitdata for a user.
  */
 public class AllHabitsFragment extends Fragment {
-
+    private static final String TAG="Debug set top";
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -29,6 +32,7 @@ public class AllHabitsFragment extends Fragment {
 
         ListView listView = (ListView) view.findViewById(R.id.habits_list);
         listView.setAdapter(HabitData.getInstance().getSingleHabitListAdapter());
+
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -43,6 +47,17 @@ public class AllHabitsFragment extends Fragment {
             }
         });
 
+
+        //Long click to set-top
+        listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
+            @Override
+            public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+                HabitData.getInstance().setSelectedHabitIndex(position);
+                //todo: really buggy on deleting
+                Log.d(TAG,"set top");
+                return true;
+            }
+        });
 
 
         // adding habits
