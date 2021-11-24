@@ -26,8 +26,9 @@ public class AllHabitsFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_all_habits,container,false);
 
+
+        View view = inflater.inflate(R.layout.fragment_all_habits,container,false);
         HabitData habitData = HabitData.getInstance();
 
         ListView listView = (ListView) view.findViewById(R.id.habits_list);
@@ -48,13 +49,14 @@ public class AllHabitsFragment extends Fragment {
         });
 
 
-        //Long click to set-top
+        //Long click to swap
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
                 HabitData.getInstance().setSelectedHabitIndex(position);
                 //todo: really buggy on deleting
-                Log.d(TAG,"set top");
+                habitData.setSelectedHabitIndex(position);
+                Log.d(TAG,"swap");
                 return true;
             }
         });

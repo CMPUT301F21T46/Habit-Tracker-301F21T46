@@ -69,7 +69,7 @@ public class Habit {
     }
     /**
      * setter to set habit reason
-     * @param reason (String) containing habit reason
+     * @param reason (String) containing habit reason+
      */
     public void setReason(String reason) {
         this.reason = reason;
